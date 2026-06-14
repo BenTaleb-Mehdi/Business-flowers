@@ -1,7 +1,7 @@
 // Centralized content file for the luxury Moroccan wedding landing page.
 // All copy, image paths, metadata, and configurations are stored here.
 
-export const BRAND_NAME = "Bloement";
+export const BRAND_NAME = "Hand touch";
 export const TARGET_PHONE_NUMBER = "+212600000000"; // Format: CCXXXXXXXXX (without +, spaces or dashes for WhatsApp link)
 
 export const SEO_METADATA = {
