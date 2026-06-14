@@ -8,7 +8,7 @@ export default function BackgroundCanvas() {
 
   useEffect(() => {
     setMounted(true); 
-  }, []);
+  }, []); 
 
   if (!mounted) return null;
 
