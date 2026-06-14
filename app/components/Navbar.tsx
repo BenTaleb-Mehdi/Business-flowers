@@ -2,29 +2,48 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { NAVBAR_CONTENT } from "@/src/data/content";
+import Link from "next/link";
+import { useLanguage } from "@/app/components/LanguageProvider";
+import { SUPPORTED_LANGUAGES } from "@/src/data/translations";
+import { BRAND_NAME } from "@/src/data/content";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t, lang, setLang } = useLanguage();
+  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
+  const [isMobileLangOpen, setIsMobileLangOpen] = useState(false);
 
-  // Smooth scroll listener for the header border effect
+  // Close dropdowns on click outside
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+    if (!isLangDropdownOpen && !isMobileLangOpen) return;
+    const handleClose = () => {
+      setIsLangDropdownOpen(false);
+      setIsMobileLangOpen(false);
     };
+    window.addEventListener("click", handleClose);
+    return () => window.removeEventListener("click", handleClose);
+  }, [isLangDropdownOpen, isMobileLangOpen]);
+
+  const currentLangConfig = SUPPORTED_LANGUAGES.find((l) => l.code === lang);
+
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 30);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Prevent background scrolling when mobile menu is open
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
   }, [isMobileMenuOpen]);
+
+  const navLinks = [
+    { label: t.nav.home,     href: "/" },
+    { label: t.nav.boutique, href: "/products" },
+    { label: t.nav.about,    href: "/about" },
+    { label: t.nav.blog,     href: "/blog" },
+    { label: t.nav.contact,  href: "/contact" },
+  ];
 
   return (
     <>
@@ -36,50 +55,116 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full flex items-center justify-between">
-          
+
           {/* 1. Left: Brand Logo */}
           <div className="flex-shrink-0 relative z-20">
-            <a href="#" className="flex items-center gap-3 group">
+            <Link href="/" className="flex items-center gap-3 group">
               <div className="relative w-17 h-17 transition-transform duration-500 group-hover:scale-105 opacity-80">
-                 <Image 
-                   src="/images/logo.png" 
-                   alt="Logo" 
-                   fill
-                   className="object-contain grayscale"
-                 />
+                <Image
+                  src="/images/logo.png"
+                  alt="Logo"
+                  fill
+                  sizes="70px"
+                  className="object-contain grayscale"
+                />
               </div>
               <span className="text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase text-gray-900">
-                {NAVBAR_CONTENT.logoText}
+                {BRAND_NAME}
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* 2. Center: Desktop Navigation */}
           <nav className="hidden md:flex items-center justify-center space-x-8 lg:space-x-12 absolute left-1/2 -translate-x-1/2">
-            {NAVBAR_CONTENT.links.map((link) => (
-              <a
-                key={link.label}
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
                 href={link.href}
                 className="relative text-[9px] lg:text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400 hover:text-gray-900 transition-colors duration-300 group py-2"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 w-0 h-[1px] bg-gray-900 -translate-x-1/2 transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100" />
-              </a>
+              </Link>
             ))}
           </nav>
 
-          {/* 3. Right: CTA Button & Mobile Menu Toggle */}
-          <div className="flex items-center justify-end gap-6 z-20">
+          {/* 3. Right: Language Switcher + CTA + Mobile Hamburger */}
+          <div className="flex items-center justify-end gap-4 z-20">
+
+            {/* Desktop Language Switcher Dropdown */}
+            <div className="relative hidden md:inline-block text-left">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsLangDropdownOpen((prev) => !prev);
+                }}
+                className="flex items-center gap-2 border border-gray-100 hover:border-gray-300 px-3 py-2 rounded-sm text-[9px] font-bold tracking-[0.15em] uppercase text-gray-700 hover:text-gray-900 transition-all duration-300 bg-white"
+              >
+                <span>{currentLangConfig?.flag}</span>
+                <span>{currentLangConfig?.label}</span>
+                <svg
+                  className={`w-2.5 h-2.5 text-gray-400 transition-transform duration-300 ${
+                    isLangDropdownOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2.5"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              {/* Dropdown Menu */}
+              <div
+                className={`absolute right-0 mt-2 w-32 bg-white border border-gray-100 rounded-sm shadow-[0_10px_30px_-10px_rgba(0,0,0,0.08)] transition-all duration-300 origin-top-right ${
+                  isLangDropdownOpen
+                    ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+                    : "opacity-0 scale-95 -translate-y-2 pointer-events-none"
+                }`}
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="py-1">
+                  {SUPPORTED_LANGUAGES.map((l) => (
+                    <button
+                      key={l.code}
+                      onClick={() => {
+                        setLang(l.code);
+                        setIsLangDropdownOpen(false);
+                      }}
+                      className={`w-full flex items-center justify-between px-3.5 py-2.5 text-[9px] font-bold tracking-[0.15em] uppercase text-left transition-colors duration-200 ${
+                        lang === l.code
+                          ? "bg-gray-900 text-white"
+                          : "text-gray-500 hover:bg-[#F9F7F6] hover:text-gray-900"
+                      }`}
+                    >
+                      <span className="flex items-center gap-2">
+                        <span>{l.flag}</span>
+                        <span>{l.label}</span>
+                      </span>
+                      {lang === l.code && (
+                        <span className="text-[8px]">✓</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
             {/* Desktop CTA */}
-            <a
+            <Link
               href="#order"
               className="hidden md:inline-flex items-center justify-center px-8 py-3 text-[9px] font-bold tracking-[0.2em] uppercase border border-gray-200 text-gray-900 hover:bg-gray-900 hover:border-gray-900 hover:text-white transition-all duration-500"
             >
-              {NAVBAR_CONTENT.ctaText}
-            </a>
+              {t.nav.cta}
+            </Link>
 
-            {/* Mobile Hamburger / Close Icon */}
-            <button 
+            {/* Mobile Hamburger */}
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden flex flex-col justify-center items-end gap-1.5 w-8 h-8 group z-[80] relative"
               aria-label="Toggle Menu"
@@ -93,55 +178,121 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* ---------------- MOBILE MENU DRAWER SECTION ---------------- */}
-      
-      {/* Dark Overlay Backdrop */}
-      <div 
+      {/* Dark Overlay */}
+      <div
         className={`fixed inset-0 bg-gray-900/20 backdrop-blur-sm z-[60] transition-opacity duration-500 md:hidden ${
           isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsMobileMenuOpen(false)}
       />
 
-      {/* Left Slide-in Drawer */}
-      <aside 
+      {/* Mobile Drawer */}
+      <aside
         className={`fixed top-0 left-0 bottom-0 w-[85vw] max-w-[400px] bg-[#F9F7F6] z-[70] shadow-2xl flex flex-col justify-between pt-32 pb-12 px-8 md:hidden transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        {/* Mobile Navigation Links */}
+        {/* Mobile Nav Links */}
         <nav className="flex flex-col space-y-6">
-          {NAVBAR_CONTENT.links.map((link, index) => (
-            <div 
-              key={link.label}
+          {navLinks.map((link, index) => (
+            <div
+              key={link.href}
               className={`overflow-hidden transition-all duration-500 delay-${index * 100} ${
                 isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              <a
+              <Link
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="font-serif text-4xl text-gray-900 hover:text-gray-500 transition-colors block"
               >
                 {link.label}
-              </a>
+              </Link>
             </div>
           ))}
         </nav>
 
-        {/* Mobile Footer Info & CTA */}
-        <div className={`transition-all duration-700 delay-300 flex flex-col gap-8 ${
-          isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-        }`}>
+        {/* Mobile Footer: Language + CTA */}
+        <div
+          className={`transition-all duration-700 delay-300 flex flex-col gap-6 ${
+            isMobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <div className="h-[1px] w-full bg-gray-200" />
-          
-          <a
+
+          {/* Mobile Language Switcher Dropdown */}
+          <div className="relative w-full">
+            <span className="block text-[8px] font-bold tracking-widest uppercase text-gray-400 mb-2">Lang:</span>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsMobileLangOpen((prev) => !prev);
+              }}
+              className="w-full flex items-center justify-between px-4 py-3 border border-gray-200 rounded-sm text-[10px] font-bold tracking-[0.15em] uppercase text-gray-700 bg-white"
+            >
+              <span className="flex items-center gap-2">
+                <span>{currentLangConfig?.flag}</span>
+                <span>{currentLangConfig?.label}</span>
+              </span>
+              <svg
+                className={`w-3 h-3 text-gray-400 transition-transform duration-300 ${
+                  isMobileLangOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2.5"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+
+            {/* Mobile Dropdown Panel (Opens upward to avoid screen clipping) */}
+            <div
+              className={`absolute left-0 right-0 bottom-full mb-2 bg-white border border-gray-200 rounded-sm shadow-lg z-50 transition-all duration-300 origin-bottom ${
+                isMobileLangOpen
+                  ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+                  : "opacity-0 scale-95 translate-y-2 pointer-events-none"
+              }`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="py-1">
+                {SUPPORTED_LANGUAGES.map((l) => (
+                  <button
+                    key={l.code}
+                    onClick={() => {
+                      setLang(l.code);
+                      setIsMobileLangOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`w-full flex items-center justify-between px-4 py-3 text-[10px] font-bold tracking-[0.15em] uppercase text-left transition-colors duration-200 ${
+                      lang === l.code
+                        ? "bg-gray-900 text-white"
+                        : "text-gray-500 hover:bg-[#F9F7F6] hover:text-gray-900"
+                    }`}
+                  >
+                    <span className="flex items-center gap-2">
+                      <span>{l.flag}</span>
+                      <span>{l.label}</span>
+                    </span>
+                    {lang === l.code && <span className="text-[9px]">✓</span>}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <Link
             href="#order"
             onClick={() => setIsMobileMenuOpen(false)}
             className="w-full text-center px-8 py-4 text-[10px] font-bold tracking-[0.2em] uppercase bg-[#6A4C4C] text-white hover:bg-gray-900 transition-colors"
           >
-            {NAVBAR_CONTENT.ctaText}
-          </a>
+            {t.nav.cta}
+          </Link>
 
           <div className="flex justify-between items-center text-[9px] tracking-[0.2em] uppercase text-gray-400 font-bold">
             <span>Atelier Maroc</span>

@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { SEO_METADATA } from "@/src/data/content";
 import BackgroundCanvas from "@/app/components/BackgroundCanvas";
-import Navbar from "@/app/components/Navbar";
 import Hero from "@/app/components/Hero";
 import Collection from "@/app/components/Collection";
 import HowItWorks from "@/app/components/HowItWorks";
-import OrderForm from "@/app/components/OrderForm";
-import Footer from "@/app/components/Footer";
+import FloatingContact from "@/app/components/FloatingContact";
 
 export const metadata: Metadata = {
   title: SEO_METADATA.title,
@@ -31,20 +29,14 @@ export default function Home() {
       {/* Background drifting canvas */}
       <BackgroundCanvas />
 
-      {/* Floating blurred navigation bar */}
-      <Navbar />
-
       {/* Content layout */}
-      <main className="flex-grow z-10 relative">
+      <div className="flex-grow z-10 relative">
         <Hero />
         <Collection />
         <HowItWorks />
-        <OrderForm />
-      </main>
+      </div>
 
-      {/* Localized footer */}
-      <Footer />
+  
     </div>
   );
 }
-

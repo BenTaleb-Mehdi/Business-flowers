@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { LOCAL_BUSINESS_SCHEMA } from "@/src/data/content";
-
+import { LanguageProvider } from "@/app/components/LanguageProvider";
+import FloatingContact from "@/app/components/FloatingContact";
 // Import your global Navbar and Footer
-import Navbar from "@/app/components/Navbar"; // <-- Check this path matches your folder structure
-import Footer from "@/app/components/Footer"; // <-- Check this path matches your folder structure
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html
       lang="fr"
       className={`${plusJakarta.variable} ${cormorant.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <script
@@ -41,20 +43,20 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }}
         />
       </head>
-      {/* Changed background to white for the minimalist editorial style */}
-      <body className="min-h-full flex flex-col bg-white text-gray-900 font-sans">
-        
-        {/* Global Navigation */}
-        <Navbar />
+      <body className="min-h-full flex flex-col bg-white text-gray-900 font-sans" suppressHydrationWarning>
+        <LanguageProvider>
+          {/* Global Navigation */}
+          <Navbar />
 
-        {/* Main Content Area (flex-1 ensures the footer stays at the bottom of short pages) */}
-        <main className="flex-1">
-          {children}
-        </main>
+          {/* Main Content Area */}
+          <main className="flex-1">
+            {children}
+          </main>
 
-        {/* Global Footer */}
-        <Footer />
-        
+          {/* Global Footer */}
+          <Footer />
+        </LanguageProvider>
+            <FloatingContact />
       </body>
     </html>
   );

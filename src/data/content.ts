@@ -2,14 +2,14 @@
 // All copy, image paths, metadata, and configurations are stored here.
 
 export const BRAND_NAME = "Hand touch";
-export const TARGET_PHONE_NUMBER = "+212600000000"; // Format: CCXXXXXXXXX (without +, spaces or dashes for WhatsApp link)
+export const TARGET_PHONE_NUMBER = "+212630829654"; // Format: CCXXXXXXXXX (without +, spaces or dashes for WhatsApp link)
 
 export const SEO_METADATA = {
-  title: "Bloement | Luxury Flower Delivery",
-  description: "Premium floral arrangements, bespoke bouquets, and elegant gift boxes delivered across Morocco. Experience the art of gifting with Bloement.",
+  title: "Hand touch | Luxury Flower Delivery",
+  description: "Premium floral arrangements, bespoke bouquets, and elegant gift boxes delivered across Morocco. Experience the art of gifting with Hand touch.",
   keywords: [
     "luxury flowers",
-    "bloement",
+    "hand touch",
     "flower delivery",
     "premium bouquets",
     "gift boxes",
@@ -69,9 +69,9 @@ export const NAVBAR_CONTENT = {
   links: [
     { label: "Home", href: "/" },
     { label: "Boutique", href: "/products" },
-    { label: "Collections", href: "/" },
-    { label: "How It Works", href: "/" },
-    { label: "Order", href: "/" }
+    { label: "about", href: "/about" },
+    { label: "blof", href: "/blog" },
+    { label: "contact", href: "/contact" }
   ],
   ctaText: "Order Now",
 };
@@ -106,8 +106,7 @@ export const PRODUCTS_CONTENT: ProductItem[] = [
     description: "A curated selection of seasonal flowers, arranged with artistic flair. Every detail is meticulously crafted to evoke emotion and elegance.",
     images: [
       "/images/products/products1.jpeg",
-      "/images/products/products1-detail.jpeg", 
-      "/images/products/products1-box.jpeg"
+      "/images/products/products2-jpeg",
     ],
     features: ["Locally sourced", "Hand‑tied", "Customizable stems"]
   },
@@ -120,8 +119,7 @@ export const PRODUCTS_CONTENT: ProductItem[] = [
     description: "Elegant gift box with premium roses and silk ribbons. Designed specifically to create a breathtaking unboxing experience.",
     images: [
       "/images/products/products2.jpeg",
-      "/images/products/products2-open.jpeg",
-      "/images/products/products2-ribbon.jpeg"
+      "/images/products/products1.jpeg",
     ],
     features: ["Silk ribbon", "Gold foil logo", "Personal note"]
   },
