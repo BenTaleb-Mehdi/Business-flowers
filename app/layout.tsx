@@ -7,6 +7,7 @@ import FloatingContact from "@/app/components/FloatingContact";
 // Import your global Navbar and Footer
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import SmoothScroll from "./components/SmoothScroll";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-white text-gray-900 font-sans" suppressHydrationWarning>
+        <SmoothScroll>
         <LanguageProvider>
           {/* Global Navigation */}
           <Navbar />
@@ -56,6 +58,7 @@ export default function RootLayout({
           {/* Global Footer */}
           <Footer />
         </LanguageProvider>
+        </SmoothScroll>
             <FloatingContact />
       </body>
     </html>

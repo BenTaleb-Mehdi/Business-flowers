@@ -71,3 +71,15 @@ body {
 .btn-gold {
   @apply relative inline-flex items-center justify-center px-10 py-4 text-xs font-bold tracking-widest uppercase bg-[var(--color-brand-gold)] text-white overflow-hidden transition-all duration-500 shadow-[0_8px_30px_rgb(212,175,55,.25)] hover:shadow-[0_8px_30px_rgb(212,175,55,.45)];
 }
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  scroll-behavior: contain;
+}
