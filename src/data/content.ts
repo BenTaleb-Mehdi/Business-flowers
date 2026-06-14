@@ -77,7 +77,7 @@ export const NAVBAR_CONTENT = {
 };
 
 export const HERO_CONTENT = {
-  title: "Bloement",
+  title: "Hand touch",
   subtitle: "Luxury floral creations for the most memorable moments.",
   ctaPrimary: "Create Your Bouquet",
   ctaSecondary: "Explore Collections",
