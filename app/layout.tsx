@@ -3,6 +3,10 @@ import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { LOCAL_BUSINESS_SCHEMA } from "@/src/data/content";
 
+// Import your global Navbar and Footer
+import Navbar from "@/app/components/Navbar"; // <-- Check this path matches your folder structure
+import Footer from "@/app/components/Footer"; // <-- Check this path matches your folder structure
+
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-serif",
@@ -37,10 +41,21 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(LOCAL_BUSINESS_SCHEMA) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-brand-pink-light text-brand-charcoal font-sans">
-        {children}
+      {/* Changed background to white for the minimalist editorial style */}
+      <body className="min-h-full flex flex-col bg-white text-gray-900 font-sans">
+        
+        {/* Global Navigation */}
+        <Navbar />
+
+        {/* Main Content Area (flex-1 ensures the footer stays at the bottom of short pages) */}
+        <main className="flex-1">
+          {children}
+        </main>
+
+        {/* Global Footer */}
+        <Footer />
+        
       </body>
     </html>
   );
 }
-

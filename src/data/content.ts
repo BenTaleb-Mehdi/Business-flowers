@@ -67,10 +67,11 @@ export const LOCAL_BUSINESS_SCHEMA = {
 export const NAVBAR_CONTENT = {
   logoText: BRAND_NAME,
   links: [
-    { label: "Home", href: "#" },
-    { label: "Collections", href: "#collection" },
-    { label: "How It Works", href: "#process" },
-    { label: "Order", href: "#order" }
+    { label: "Home", href: "/" },
+    { label: "Boutique", href: "/products" },
+    { label: "Collections", href: "/" },
+    { label: "How It Works", href: "/" },
+    { label: "Order", href: "/" }
   ],
   ctaText: "Order Now",
 };
@@ -91,15 +92,18 @@ export interface ProductItem {
   description: string;
   images: string[]; // <-- Changed from imagePath to an array of images
   features: string[];
+  category: string; // <-- Added for the sidebar filter
+  price: string;
 }
 
 export const PRODUCTS_CONTENT: ProductItem[] = [
   {
-    id: "bouquet",
+    id: "bouquet-saisonnier",
     title: "Seasonal Bouquet",
     subtitle: "Fresh & vibrant",
+    category: "Fleurs",
+    price: "85",
     description: "A curated selection of seasonal flowers, arranged with artistic flair. Every detail is meticulously crafted to evoke emotion and elegance.",
-    // Add multiple images here (e.g., front view, detail close-up, packaging)
     images: [
       "/images/products/products1.jpeg",
       "/images/products/products1-detail.jpeg", 
@@ -108,9 +112,11 @@ export const PRODUCTS_CONTENT: ProductItem[] = [
     features: ["Locally sourced", "Hand‑tied", "Customizable stems"]
   },
   {
-    id: "giftbox",
+    id: "coffret-premium",
     title: "Premium Gift Box",
     subtitle: "Deluxe presentation",
+    category: "Coffrets",
+    price: "120",
     description: "Elegant gift box with premium roses and silk ribbons. Designed specifically to create a breathtaking unboxing experience.",
     images: [
       "/images/products/products2.jpeg",
@@ -118,7 +124,8 @@ export const PRODUCTS_CONTENT: ProductItem[] = [
       "/images/products/products2-ribbon.jpeg"
     ],
     features: ["Silk ribbon", "Gold foil logo", "Personal note"]
-  }
+  },
+  // You can add more products here (Invitations, Chocolats, etc.) to populate the grid!
 ];
 
 export const PROCESS_CONTENT = {
@@ -193,3 +200,5 @@ export function generateWhatsAppLink(formData: {
   const encodedText = encodeURIComponent(text);
   return `https://wa.me/${TARGET_PHONE_NUMBER}?text=${encodedText}`;
 }
+
+

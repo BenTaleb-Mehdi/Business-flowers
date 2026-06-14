@@ -40,9 +40,9 @@ export default function Navbar() {
           {/* 1. Left: Brand Logo */}
           <div className="flex-shrink-0 relative z-20">
             <a href="#" className="flex items-center gap-3 group">
-              <div className="relative w-6 h-6 transition-transform duration-500 group-hover:scale-105 opacity-80">
+              <div className="relative w-17 h-17 transition-transform duration-500 group-hover:scale-105 opacity-80">
                  <Image 
-                   src="/logo_branch.png" 
+                   src="/images/logo.png" 
                    alt="Logo" 
                    fill
                    className="object-contain grayscale"
