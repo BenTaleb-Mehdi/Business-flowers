@@ -81,7 +81,7 @@ export const HERO_CONTENT = {
   subtitle: "Luxury floral creations for the most memorable moments.",
   ctaPrimary: "Create Your Bouquet",
   ctaSecondary: "Explore Collections",
-  imagePath: "/images/hero-image-1.jpeg",
+  imagePath: "/images/hero-image-3.png",
   imageAlt: "Elegant flower arrangement in a pastel setting"
 };
 
@@ -96,35 +96,7 @@ export interface ProductItem {
   price: string;
 }
 
-export const PRODUCTS_CONTENT: ProductItem[] = [
-  {
-    id: "bouquet-saisonnier",
-    title: "Seasonal Bouquet",
-    subtitle: "Fresh & vibrant",
-    category: "Fleurs",
-    price: "85",
-    description: "A curated selection of seasonal flowers, arranged with artistic flair. Every detail is meticulously crafted to evoke emotion and elegance.",
-    images: [
-      "/images/products/products1.jpeg",
-      "/images/products/products2-jpeg",
-    ],
-    features: ["Locally sourced", "Hand‑tied", "Customizable stems"]
-  },
-  {
-    id: "coffret-premium",
-    title: "Premium Gift Box",
-    subtitle: "Deluxe presentation",
-    category: "Coffrets",
-    price: "120",
-    description: "Elegant gift box with premium roses and silk ribbons. Designed specifically to create a breathtaking unboxing experience.",
-    images: [
-      "/images/products/products2.jpeg",
-      "/images/products/products1.jpeg",
-    ],
-    features: ["Silk ribbon", "Gold foil logo", "Personal note"]
-  },
-  // You can add more products here (Invitations, Chocolats, etc.) to populate the grid!
-];
+
 
 export const PROCESS_CONTENT = {
   title: "Our Creative Journey",

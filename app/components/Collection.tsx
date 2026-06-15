@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { useLanguage } from "@/app/components/LanguageProvider";
-import { PRESTIGE_PRODUCTS, type MultilingualProductItem } from "@/src/data/prestigeProducts";
+import { HAND_TOUCH_PRODUCTS, type MultilingualProductItem } from "@/src/data/prestigeProducts";
 import type { Language } from "@/src/data/translations";
 import OrderModal from "./OrderModal"; 
 import ProductCard from "./ProductCard";
@@ -16,7 +16,7 @@ function ProductImage({ src, alt }: { src: string; alt: string }) {
   }
   return (
     <Image
-      src={src}
+      src={src.startsWith('/') ? src : `/${src}`}
       alt={alt}
       fill
       className="object-cover sm:object-contain p-0 sm:p-16"
@@ -199,7 +199,7 @@ export default function Collection() {
     : null;
 
   // Render only the top 3 products for the Home Page preview
-  const homeProducts = PRESTIGE_PRODUCTS.slice(0, 3);
+  const homeProducts = HAND_TOUCH_PRODUCTS.slice(0, 3);
 
   return (
     <section id="collection" className="py-24 sm:py-32 bg-[#FAFAFA] relative">

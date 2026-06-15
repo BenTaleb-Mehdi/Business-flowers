@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 // ── IMPORTATION DES DONNÉES DE VOS PRODUITS ──────────────────
 // On importe les produits pour que Gemini puisse lire les détails, prix et caractéristiques
-import { PRESTIGE_PRODUCTS } from '@/src/data/prestigeProducts';
+import { HAND_TOUCH_PRODUCTS } from '@/src/data/prestigeProducts';
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || '');
 
@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     }
 
     // Préparation de la chaîne de texte contenant le catalogue de produits pour l'IA
-    const catalogString = JSON.stringify(PRESTIGE_PRODUCTS, null, 2);
+    const catalogString = JSON.stringify(HAND_TOUCH_PRODUCTS, null, 2);
 
     const model = genAI.getGenerativeModel({
       model: 'gemini-2.5-flash',

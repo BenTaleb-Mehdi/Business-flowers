@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
 import { useLanguage } from "@/app/components/LanguageProvider";
-import { PRESTIGE_PRODUCTS, type MultilingualProductItem } from "@/src/data/prestigeProducts";
+import { HAND_TOUCH_PRODUCTS, type MultilingualProductItem } from "@/src/data/prestigeProducts";
 import type { Language } from "@/src/data/translations";
 import OrderModal from "./OrderModal"; 
 import ProductCard from "./ProductCard"; // <-- Importation du nouveau composant !
@@ -16,7 +16,7 @@ function ProductImage({ src, alt }: { src: string; alt: string }) {
   }
   return (
     <Image
-      src={src}
+      src={src.startsWith('/') ? src : `/${src}`}
       alt={alt}
       fill
       className="object-cover sm:object-contain p-0 sm:p-16"
@@ -124,13 +124,13 @@ export default function Products() {
 
   const CATEGORIES = [
     currentStrings.all,
-    ...Array.from(new Set(PRESTIGE_PRODUCTS.map((p) => p.category[l]))),
+    ...Array.from(new Set(HAND_TOUCH_PRODUCTS.map((p) => p.category[l]))),
   ];
 
   const filteredProducts =
     activeCategory === currentStrings.all
-      ? PRESTIGE_PRODUCTS
-      : PRESTIGE_PRODUCTS.filter((p) => p.category[l] === activeCategory);
+      ? HAND_TOUCH_PRODUCTS
+      : HAND_TOUCH_PRODUCTS.filter((p) => p.category[l] === activeCategory);
 
   const handleScroll = () => {
     if (!sliderRef.current) return;

@@ -59,15 +59,7 @@ export default function Navbar() {
           {/* 1. Left: Brand Logo */}
           <div className="flex-shrink-0 relative z-20">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="relative w-17 h-17 transition-transform duration-500 group-hover:scale-105 opacity-80">
-                <Image
-                  src="/images/logo.png"
-                  alt="Logo"
-                  fill
-                  sizes="70px"
-                  className="object-contain grayscale"
-                />
-              </div>
+           
               <span className="text-[11px] md:text-xs font-bold tracking-[0.25em] uppercase text-gray-900">
                 {BRAND_NAME}
               </span>
