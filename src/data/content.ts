@@ -92,6 +92,12 @@ export const ABOUT_CONTENT = {
   atelierImageAlt: "Handcrafted personalized henna ceremony favors"
 };
 
+export const BLOG_IMAGES = {
+  trends: "/images/blog/image1.png",
+  dragees: "/images/blog/image2.png",
+  invitation: "/images/blog/image3.png",
+};
+
 
 export interface ProductItem {
   id: string;

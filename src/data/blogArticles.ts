@@ -3,6 +3,8 @@
 // Used by /blog (list) and /blog/[slug] (detail)
 // ============================================================
 
+import { BLOG_IMAGES } from "./content";
+
 export interface ArticleSection {
   heading: string;
   body: string;
@@ -44,7 +46,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     },
     readTime: 5,
     author: "Maison Layal",
-    image: "/images/blog1.jpeg",
+    image: BLOG_IMAGES.trends,
     title: {
       fr: "Les tendances florales pour les mariages de 2026",
       en: "Floral Trends for 2026 Weddings",
@@ -150,7 +152,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     },
     readTime: 6,
     author: "Maison Layal",
-    image: "/images/blog2.jpeg",
+    image: BLOG_IMAGES.dragees,
     title: {
       fr: "Comment choisir ses dragées de mariage ?",
       en: "How to Choose Your Wedding Dragées?",
@@ -256,7 +258,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     },
     readTime: 7,
     author: "Maison Layal",
-    image: "/images/blog3.jpeg",
+    image: BLOG_IMAGES.invitation,
     title: {
       fr: "L'art de l'invitation marocaine",
       en: "The Art of the Moroccan Invitation",
