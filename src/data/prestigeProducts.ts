@@ -191,7 +191,7 @@ title: {
   {
     id: "carte-remerciement-chocolat",
     price: "45",
-    images: ["/images/products/Cartes/image1.jpeg","/images/products/Cartes/image2.jpeg","/images/products/Cartes/image3.jpeg","/images/products/Cartes/image4.jpeg","/images/products/Cartes/image5.jpeg","/images/products/Cartes/image6.jpeg"], // Dakhhel s-smiya dyal tsawira hna
+    images: ["/images/products/Cartes/image1.jpeg","/images/products/Cartes/image2.jpeg","/images/products/Cartes/image3.jpeg","/images/products/Cartes/image5.jpeg","/images/products/Cartes/image6.jpeg"], // Dakhhel s-smiya dyal tsawira hna
     category: { fr: "Cartes", en: "Cards", es: "Tarjetas", ar: "بطاقات" },
     title: { 
       fr: "Carte de remerciement élégante avec chocolat", 
