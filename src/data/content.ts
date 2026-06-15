@@ -85,6 +85,14 @@ export const HERO_CONTENT = {
   imageAlt: "Elegant personalized gifts and event favors in a beautiful setting"
 };
 
+export const ABOUT_CONTENT = {
+  heroImage: "/images/about/image1.png",
+  heroImageAlt: "Luxury bespoke gift boxes collection",
+  atelierImage: "/images/about/image2.png",
+  atelierImageAlt: "Handcrafted personalized henna ceremony favors"
+};
+
+
 export interface ProductItem {
   id: string;
   title: string;

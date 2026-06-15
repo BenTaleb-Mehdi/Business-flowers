@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useLanguage } from "@/app/components/LanguageProvider";
+import { ABOUT_CONTENT } from "@/src/data/content";
 
 export default function About() {
   const { t } = useLanguage();
@@ -25,11 +27,14 @@ export default function About() {
 
         {/* ── HERO IMAGE ──────────────────────────────────── */}
         <div className="relative w-full h-[40vh] sm:h-[55vh] md:h-[70vh] bg-[#F9F7F6] overflow-hidden mb-20 sm:mb-24 lg:mb-32">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#F2EAE8] via-[#EDE3E1] to-[#D9CECA]" />
-          {/* Decorative elements */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-10">
-            <span className="font-serif text-[20vw] text-gray-400 select-none">✿</span>
-          </div>
+          <Image
+            src={ABOUT_CONTENT.heroImage}
+            alt={ABOUT_CONTENT.heroImageAlt}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
         </div>
 
         {/* ── EDITORIAL SPLIT ─────────────────────────────── */}
@@ -50,7 +55,15 @@ export default function About() {
 
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end mt-6 lg:mt-0 lg:pt-24">
             <div className="relative w-full max-w-[380px] sm:max-w-[450px] aspect-[4/5] bg-[#F9F7F6] p-4 sm:p-8">
-              <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-[#F2EAE8] to-[#D9CECA]" />
+              <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-[#F2EAE8] to-[#D9CECA]">
+                <Image
+                  src={ABOUT_CONTENT.atelierImage}
+                  alt={ABOUT_CONTENT.atelierImageAlt}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, 450px"
+                />
+              </div>
               <div className="absolute -left-5 top-1/2 -translate-y-1/2 -rotate-90 hidden lg:block origin-center z-10">
                 <span className="text-[9px] tracking-[0.3em] uppercase text-gray-900 font-bold whitespace-nowrap bg-white px-4 py-2">
                   {a.atelierLabel}
