@@ -77,7 +77,7 @@ export const NAVBAR_CONTENT = {
 };
 
 export const HERO_CONTENT = {
-  title: "Hand touch",
+  title: "Hand Touch",
   subtitle: "Luxury bespoke favors and personalized gifts for your most memorable moments.",
   ctaPrimary: "Create Your Custom Box",
   ctaSecondary: "Explore Collections",
