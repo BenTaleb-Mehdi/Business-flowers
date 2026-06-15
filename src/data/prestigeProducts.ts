@@ -313,31 +313,7 @@ title: {
       ar: ["كروشيه مصنوع يدوياً", "شوكولاتة عالية الجودة", "تخصيص حسب الطلب"],
     },
   },
-  {
-    id: "carte-remerciement-parfum",
-    price: "55",
-    images: ["/images/products/Cartes/image4.jpeg"], // Dakhhel s-smiya dyal tsawira hna
-    category: { fr: "Cartes", en: "Cards", es: "Tarjetas", ar: "بطاقات" },
-    title: { 
-      fr: "Carte de remerciement avec bouteille de parfum", 
-      en: "Thank You Card with Perfume Bottle", 
-      es: "Tarjeta de Agradecimiento con Botella de Perfume", 
-      ar: "بطاقة شكر مع قارورة عطر" 
-    },
-    subtitle: { fr: "Élégance parfumée", en: "Scented elegance", es: "Elegancia perfumada", ar: "أناقة معطرة" },
-    description: {
-      fr: "Une carte de remerciement raffinée accompagnée d'une miniature de parfum élégante. Un souvenir inoubliable pour remercier vos invités avec classe.",
-      en: "A refined thank you card accompanied by an elegant miniature perfume. An unforgettable souvenir to thank your guests with class.",
-      es: "Una refinada tarjeta de agradecimiento acompañada de una elegante miniatura de perfume. Un recuerdo inolvidable para agradecer a tus invitados con clase.",
-      ar: "بطاقة شكر راقية مرفقة بقارورة عطر صغيرة وأنيقة. تذكار لا يُنسى لشكر ضيوفكم بأسلوب مميز وفخم.",
-    },
-    features: {
-      fr: ["Carte personnalisée", "Miniature de parfum", "Cadeau luxueux"],
-      en: ["Personalized card", "Miniature perfume", "Luxurious gift"],
-      es: ["Tarjeta personalizada", "Miniatura de perfume", "Regalo lujoso"],
-      ar: ["بطاقة مخصصة", "قارورة عطر صغيرة", "هدية فاخرة"],
-    },
-  },
+ 
 
 
   
