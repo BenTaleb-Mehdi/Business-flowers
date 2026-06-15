@@ -24,8 +24,12 @@ export const HAND_TOUCH_PRODUCTS: MultilingualProductItem[] = [
     price: "45",
     images: ["/images/products/Henna/image1.jpeg","/images/products/Henna/image2.jpeg","/images/products/Henna/image3.jpeg"],
     category: { fr: "Henna", en: "Henna", es: "Henna", ar: "حناء" },
-    title: { fr: "Fiole Henna Prestige", en: "Prestige Henna Vial", es: "Vial de Henna Prestige", ar: "قارورة حناء برستيج" },
-    subtitle: { fr: "Cadeau d'invité raffiné", en: "Refined guest gift", es: "Regalo refinado", ar: "هدية ضيوف أنيقة" },
+title: { 
+  fr: "Flacons de Parfum Personnalisés", 
+  en: "Personalized Perfume Bottles", 
+  es: "Frascos de Perfume Personalizados", 
+  ar: "قوارير عطر مخصصة" 
+},    subtitle: { fr: "Cadeau d'invité raffiné", en: "Refined guest gift", es: "Regalo refinado", ar: "هدية ضيوف أنيقة" },
     description: {
       fr: "Miniature élégante pour vos cérémonies de henné, décorée de fleurs séchées et personnalisée.",
       en: "Elegant miniature for your henna ceremonies, decorated with dried flowers and personalized.",
@@ -82,9 +86,14 @@ export const HAND_TOUCH_PRODUCTS: MultilingualProductItem[] = [
   {
     id: "eventail-bridal",
     price: "65",
-    images: ["/images/products/Accessoires/image7.jpeg","/images/products/Accessoires/image6.jpeg","/images/products/Accessoires/image5.jpeg"],
+    images: ["/images/products/Accessoires/image7.jpeg","/images/products/Accessoires/image6.jpeg","/images/products/Accessoires/image5.jpeg","/images/products/Accessoires/image8.jpeg"],
     category: { fr: "Accessoires", en: "Accessories", es: "Accesorios", ar: "إكسسوارات" },
-    title: { fr: "Éventail Bridal", en: "Bridal Fan", es: "Abanico Bridal", ar: "مروحة العروس" },
+   title: { 
+  fr: "Carte de remerciement avec Éventail de bois", 
+  en: "Thank You Card with Wooden Fan", 
+  es: "Tarjeta de Agradecimiento con Abanico de Madera", 
+  ar: "بطاقة شكر مع مروحة خشبية" 
+},
     subtitle: { fr: "Fraîcheur & Style", en: "Freshness & Style", es: "Frescura y Estilo", ar: "الانتعاش والأناقة" },
     description: {
       fr: "Éventail en bois délicat personnalisé pour les fêtes de mariage.",
@@ -99,33 +108,18 @@ export const HAND_TOUCH_PRODUCTS: MultilingualProductItem[] = [
       ar: ["خشب منقوش", "زهرة مزينة", "شرابة متضمنة"],
     },
   },
-  {
-    id: "coffret-naissance-miral",
-    price: "55",
-    images: ["/images/products/Naissance/image3.jpeg","/images/products/Naissance/image2.jpeg","/images/products/Naissance/image1.jpeg","/images/products/Naissance/image4.jpeg","/images/products/Naissance/image5.jpeg","/images/products/Naissance/image6.jpeg","/images/products/Naissance/image7.jpeg","/images/products/Naissance/image8.jpeg"],
-    category: { fr: "Naissance", en: "Baby Shower", es: "Baby Shower", ar: "استقبال مولود" },
-    title: { fr: "Coffret Naissance Miral", en: "Miral Baby Favor", es: "Detalle Bebé Miral", ar: "هدية مولود ميرال" },
-    subtitle: { fr: "Douceur de bébé", en: "Baby sweetness", es: "Dulzura de bebé", ar: "نعومة المولود" },
-    description: {
-      fr: "Coffret de bienvenue pour bébé sur le thème biche, élégant et personnalisé.",
-      en: "Baby welcome gift box with fawn theme, elegant and personalized.",
-      es: "Caja de regalo de bienvenida para bebé con temática de cervatillo, elegante y personalizada.",
-      ar: "صندوق هدايا استقبال مولود بطابع الغزال، أنيق ومخصص.",
-    },
-    features: {
-      fr: ["Thème personnalisé", "Design élégant", "Finitions dorées"],
-      en: ["Personalized theme", "Elegant design", "Golden finishes"],
-      es: ["Temática personalizada", "Diseño elegante", "Acabados dorados"],
-      ar: ["طابع مخصص", "تصميم أنيق", "لمسات ذهبية"],
-    },
-  },
+  
   {
     id: "chocolat-papillon-sema",
     price: "40",
     images: ["/images/products/Chocolats/image3.jpeg","/images/products/Chocolats/image2.jpeg","/images/products/Chocolats/image1.jpeg"],
     category: { fr: "Chocolats", en: "Chocolates", es: "Chocolates", ar: "شوكولاتة" },
-    title: { fr: "Chocolat Papillon Sema", en: "Butterfly Chocolate Sema", es: "Chocolate Mariposa Sema", ar: "شوكولاتة الفراشة سما" },
-    subtitle: { fr: "Douceur délicate", en: "Delicate sweetness", es: "Dulzura delicada", ar: "حلاوة رقيقة" },
+title: { 
+  fr: "Chocolat personnalisé Spéciale touche pour chaque occasion", 
+  en: "Personalized Chocolate: A Special Touch for Every Occasion", 
+  es: "Chocolate Personalizado: Un Toque Especial para Cada Ocasión", 
+  ar: "شوكولاتة مخصصة: لمسة خاصة لكل مناسبة" 
+},    subtitle: { fr: "Douceur délicate", en: "Delicate sweetness", es: "Dulzura delicada", ar: "حلاوة رقيقة" },
     description: {
       fr: "Chocolats raffinés décorés de papillons dorés, parfaits pour tous vos événements.",
       en: "Refined chocolates decorated with golden butterflies, perfect for all your events.",
@@ -138,20 +132,25 @@ export const HAND_TOUCH_PRODUCTS: MultilingualProductItem[] = [
       es: ["Mariposa dorada", "Cinta de satén", "Personalizable"],
       ar: ["فراشة ذهبية", "شريط ساتان", "قابلة للتخصيص"],
     },
-  }
-  /*
+  },
+  
   {
     id: "boites-mariage-champetre",
     price: "70",
-    images: ["/images/hero-image-1.jpeg"],
+    images: ["/images/products/Dragées/image1.jpeg","/images/products/Dragées/image2.jpeg","/images/products/Dragées/image3.jpeg"],
     category: { fr: "Mariage", en: "Wedding", es: "Boda", ar: "زفاف" },
-    title: { fr: "Boîtes Mariage", en: "Wedding Favors", es: "Detalles de Boda", ar: "هدايا الزفاف" },
+    title: { 
+      fr: "Dragées Personnalisées", 
+      en: "Personalized Dragées", 
+      es: "Confites Personalizados", 
+      ar: "دراجيه (ملبس) مخصصة" 
+    },
     subtitle: { fr: "Esprit champêtre", en: "Rustic spirit", es: "Espíritu rústico", ar: "طابع ريفي" },
     description: {
-      fr: "Boîtes de mariage rustiques avec fleurs séchées, parfaites pour une touche authentique.",
-      en: "Rustic wedding boxes with dried flowers, perfect for an authentic touch.",
-      es: "Cajas de boda rústicas con flores secas, perfectas para un toque auténtico.",
-      ar: "علب زفاف ريفية مع زهور مجففة، مثالية للمسة أصيلة.",
+      fr: "Boîtes de dragées rustiques avec fleurs séchées, parfaites pour une touche authentique.",
+      en: "Rustic dragées boxes with dried flowers, perfect for an authentic touch.",
+      es: "Cajas de confites rústicas con flores secas, perfectas para un toque auténtico.",
+      ar: "علب دراجيه ريفية مع زهور مجففة، مثالية للمسة أصيلة.",
     },
     features: {
       fr: ["Fleurs séchées", "Design rustique", "Noms personnalisés"],
@@ -160,5 +159,182 @@ export const HAND_TOUCH_PRODUCTS: MultilingualProductItem[] = [
       ar: ["زهور مجففة", "تصميم ريفي", "أسماء مخصصة"],
     },
   },
-  */
+  {
+    id: "carte-remerciement-chocolat",
+    price: "45",
+    images: ["/images/products/Cartes/image1.jpeg","/images/products/Cartes/image2.jpeg","/images/products/Cartes/image3.jpeg"], // Dakhhel s-smiya dyal tsawira hna
+    category: { fr: "Cartes", en: "Cards", es: "Tarjetas", ar: "بطاقات" },
+    title: { 
+      fr: "Carte de remerciement élégante avec chocolat", 
+      en: "Elegant Thank You Card with Chocolate", 
+      es: "Elegante Tarjeta de Agradecimiento con Chocolate", 
+      ar: "بطاقة شكر أنيقة مع شوكولاتة" 
+    },
+    subtitle: { fr: "Gourmandise & Gratitude", en: "Sweetness & Gratitude", es: "Dulzura y Gratitud", ar: "حلاوة وامتنان" },
+    description: {
+      fr: "Une carte de remerciement au design élégant, accompagnée d'un délicieux chocolat personnalisé pour ravir vos invités.",
+      en: "An elegantly designed thank you card, accompanied by a delicious personalized chocolate to delight your guests.",
+      es: "Una tarjeta de agradecimiento con un diseño elegante, acompañada de un delicioso chocolate personalizado para deleitar a tus invitados.",
+      ar: "بطاقة شكر بتصميم أنيق، مرفقة بقطعة شوكولاتة لذيذة ومخصصة لإسعاد ضيوفكم.",
+    },
+    features: {
+      fr: ["Papier de qualité", "Chocolat premium", "Design personnalisable"],
+      en: ["High-quality paper", "Premium chocolate", "Customizable design"],
+      es: ["Papel de alta calidad", "Chocolate premium", "Diseño personalizable"],
+      ar: ["ورق عالي الجودة", "شوكولاتة فاخرة", "تصميم قابل للتخصيص"],
+    },
+  },
+  {
+    id: "bougie-parfumee-rose",
+    price: "50",
+    images: ["/images/products/Bougies/image1.jpeg"], 
+    category: { fr: "Bougies", en: "Candles", es: "Velas", ar: "شموع" },
+    title: { 
+      fr: "Bougie parfumée en forme rose", 
+      en: "Rose-shaped Scented Candle", 
+      es: "Vela perfumada en forma de rosa", 
+      ar: "شمعة معطرة على شكل وردة" 
+    },
+    subtitle: { fr: "Ambiance romantique", en: "Romantic atmosphere", es: "Ambiente romántico", ar: "أجواء رومانسية" },
+    description: {
+      fr: "Magnifique bougie parfumée sculptée en forme de rose, avec des détails soignés. Un cadeau d'invité parfait pour embaumer leurs intérieurs.",
+      en: "Beautiful scented candle sculpted in the shape of a rose, with careful details. A perfect guest gift to fragrance their homes.",
+      es: "Hermosa vela perfumada esculpida en forma de rosa, con detalles cuidados. Un regalo perfecto para perfumar los hogares de tus invitados.",
+      ar: "شمعة معطرة جميلة منحوتة بدقة على شكل وردة. هدية مثالية لتعطير منازل ضيوفكم.",
+    },
+    features: {
+      fr: ["Cire naturelle", "Parfum délicat", "Design floral détaillé"],
+      en: ["Natural wax", "Delicate scent", "Detailed floral design"],
+      es: ["Cera natural", "Aroma delicado", "Diseño floral detallado"],
+      ar: ["شمع طبيعي", "عطر رقيق", "تصميم زهري دقيق"],
+    },
+  },
+  {
+    id: "bouteille-miel-elegante",
+    price: "55",
+    images: ["/images/products/Miel/image1.jpeg","/images/products/Miel/image2.jpeg","/images/products/Miel/image3.jpeg","/images/products/Miel/image4.jpeg"], 
+    category: { fr: "Miel", en: "Honey", es: "Miel", ar: "عسل" },
+    title: { 
+      fr: "Bouteille de miel avec un design élégant", 
+      en: "Honey Bottle with Elegant Design", 
+      es: "Botella de miel con diseño elegante", 
+      ar: "قارورة عسل بتصميم أنيق" 
+    },
+    subtitle: { fr: "Douceur dorée", en: "Golden sweetness", es: "Dulzura dorada", ar: "حلاوة ذهبية" },
+    description: {
+      fr: "Une jolie petite bouteille remplie d'un miel pur et délicieux, ornée d'un ruban et d'une étiquette personnalisée. Un cadeau naturel et raffiné pour remercier vos invités.",
+      en: "A pretty little bottle filled with pure, delicious honey, adorned with a ribbon and a personalized tag. A natural and refined gift to thank your guests.",
+      es: "Una bonita botellita llena de miel pura y deliciosa, adornada con una cinta y una etiqueta personalizada. Un regalo natural y refinado para agradecer a tus invitados.",
+      ar: "قارورة صغيرة وجميلة مليئة بالعسل الصافي واللذيذ، مزينة بشريط وبطاقة مخصصة. هدية طبيعية وراقية لشكر ضيوفكم.",
+    },
+    features: {
+      fr: ["Miel pur", "Design élégant", "Étiquette personnalisable"],
+      en: ["Pure honey", "Elegant design", "Customizable tag"],
+      es: ["Miel pura", "Diseño elegante", "Etiqueta personalizable"],
+      ar: ["عسل صافي", "تصميم أنيق", "بطاقة قابلة للتخصيص"],
+    },
+  },
+  {
+    id: "boite-cadeau-bougie-bubble",
+    price: "60",
+    images: ["/images/products/Coffrets/image1.jpeg"], // Dakhhel s-smiya dyal tsawira hna
+    category: { fr: "Coffrets", en: "Gift Boxes", es: "Cajas de Regalo", ar: "صناديق هدايا" },
+    title: { 
+      fr: "Boîte Cadeau Bougie Bubble décorée de fleurs séchées", 
+      en: "Gift Box with Bubble Candle and Dried Flowers", 
+      es: "Caja de Regalo con Vela Bubble y Flores Secas", 
+      ar: "صندوق هدية مع شمعة فقاعات وزهور مجففة" 
+    },
+    subtitle: { fr: "Charme chic & bohème", en: "Chic & boho charm", es: "Encanto chic y bohemio", ar: "سحر أنيق وبوهيمي" },
+    description: {
+      fr: "Un magnifique coffret cadeau contenant une bougie tendance en forme de bulles (bubble candle), délicatement ornée de fleurs séchées pour une touche unique et chaleureuse.",
+      en: "A beautiful gift box containing a trendy bubble candle, delicately adorned with dried flowers for a unique and warm touch.",
+      es: "Una hermosa caja de regalo que contiene una vela de tendencia en forma de burbujas, delicadamente adornada con flores secas para un toque único y cálido.",
+      ar: "صندوق هدايا رائع يحتوي على شمعة فقاعات عصرية، مزينة بعناية بزهور مجففة لتضفي لمسة دافئة وفريدة من نوعها.",
+    },
+    features: {
+      fr: ["Bougie forme Bubble", "Fleurs séchées naturelles", "Coffret prêt à offrir"],
+      en: ["Bubble shaped candle", "Natural dried flowers", "Ready-to-gift box"],
+      es: ["Vela en forma de burbuja", "Flores secas naturales", "Caja lista para regalar"],
+      ar: ["شمعة بشكل فقاعات", "زهور طبيعية مجففة", "صندوق جاهز للإهداء"],
+    },
+  },
+  {
+    id: "chocolat-personnalise-crochet",
+    price: "45",
+    images: ["/images/products/Chocolats/image5.jpeg"], // Dakhhel s-smiya dyal tsawira hna
+    category: { fr: "Chocolats", en: "Chocolates", es: "Chocolates", ar: "شوكولاتة" },
+    title: { 
+      fr: "Chocolat personnalisé décoré en crochet", 
+      en: "Personalized Chocolate Decorated with Crochet", 
+      es: "Chocolate Personalizado Decorado con Crochet", 
+      ar: "شوكولاتة مخصصة مزينة بالكروشيه" 
+    },
+    subtitle: { fr: "Touche artisanale", en: "Artisanal touch", es: "Toque artesanal", ar: "لمسة حرفية" },
+    description: {
+      fr: "Un délicieux chocolat enveloppé avec soin et sublimé par de magnifiques décorations en crochet fait main. Le cadeau parfait mêlant gourmandise et artisanat.",
+      en: "A delicious chocolate carefully wrapped and enhanced by beautiful handmade crochet decorations. The perfect gift blending sweetness and craftsmanship.",
+      es: "Un delicioso chocolate envuelto con cuidado y realzado por hermosas decoraciones de crochet hechas a mano. El regalo perfecto que mezcla dulzura y artesanía.",
+      ar: "شوكولاتة لذيذة مغلفة بعناية ومزينة بتفاصيل رائعة من الكروشيه المصنوع يدوياً. الهدية المثالية التي تجمع بين الحلاوة والحرفية التقليدية.",
+    },
+    features: {
+      fr: ["Crochet fait main", "Chocolat de qualité", "Personnalisation sur mesure"],
+      en: ["Handmade crochet", "High quality chocolate", "Custom personalization"],
+      es: ["Crochet hecho a mano", "Chocolate de alta calidad", "Personalización a medida"],
+      ar: ["كروشيه مصنوع يدوياً", "شوكولاتة عالية الجودة", "تخصيص حسب الطلب"],
+    },
+  },
+
+  {
+    id: "carte-remerciement-parfum",
+    price: "55",
+    images: ["/images/products/Cartes/image4.jpeg"], // Dakhhel s-smiya dyal tsawira hna
+    category: { fr: "Cartes", en: "Cards", es: "Tarjetas", ar: "بطاقات" },
+    title: { 
+      fr: "Carte de remerciement avec bouteille de parfum", 
+      en: "Thank You Card with Perfume Bottle", 
+      es: "Tarjeta de Agradecimiento con Botella de Perfume", 
+      ar: "بطاقة شكر مع قارورة عطر" 
+    },
+    subtitle: { fr: "Élégance parfumée", en: "Scented elegance", es: "Elegancia perfumada", ar: "أناقة معطرة" },
+    description: {
+      fr: "Une carte de remerciement raffinée accompagnée d'une miniature de parfum élégante. Un souvenir inoubliable pour remercier vos invités avec classe.",
+      en: "A refined thank you card accompanied by an elegant miniature perfume. An unforgettable souvenir to thank your guests with class.",
+      es: "Una refinada tarjeta de agradecimiento acompañada de una elegante miniatura de perfume. Un recuerdo inolvidable para agradecer a tus invitados con clase.",
+      ar: "بطاقة شكر راقية مرفقة بقارورة عطر صغيرة وأنيقة. تذكار لا يُنسى لشكر ضيوفكم بأسلوب مميز وفخم.",
+    },
+    features: {
+      fr: ["Carte personnalisée", "Miniature de parfum", "Cadeau luxueux"],
+      en: ["Personalized card", "Miniature perfume", "Luxurious gift"],
+      es: ["Tarjeta personalizada", "Miniatura de perfume", "Regalo lujoso"],
+      ar: ["بطاقة مخصصة", "قارورة عطر صغيرة", "هدية فاخرة"],
+    },
+  },
+
+  {
+    id: "fioles-henna-serghina",
+    price: "35",
+    images: ["/images/products/Traditions/image1.jpeg"], // Dakhhel s-smiya dyal tsawira hna
+    category: { fr: "Traditions", en: "Traditions", es: "Tradiciones", ar: "تقاليد" },
+    title: { 
+      fr: "Fioles en verre avec poudre de Henné et serghina", 
+      en: "Glass Vials with Henna Powder and Serghina", 
+      es: "Viales de vidrio con polvo de Henna y Serghina", 
+      ar: "قوارير زجاجية بمسحوق الحناء والسرغينة" 
+    },
+    subtitle: { fr: "Authenticité marocaine", en: "Moroccan authenticity", es: "Autenticidad marroquí", ar: "أصالة مغربية" },
+    description: {
+      fr: "De magnifiques petites fioles en verre remplies de poudre de henné traditionnelle et de serghina parfumée. Un souvenir authentique et parfumé pour vos cérémonies.",
+      en: "Beautiful small glass vials filled with traditional henna powder and scented serghina. An authentic and fragrant souvenir for your ceremonies.",
+      es: "Hermosos pequeños viales de vidrio llenos de polvo de henna tradicional y serghina perfumada. Un recuerdo auténtico y fragante para tus ceremonias.",
+      ar: "قوارير زجاجية صغيرة ورائعة مليئة بمسحوق الحناء التقليدي والسرغينة المعطرة. تذكار أصيل يعبق بالروائح الزكية لمناسباتكم.",
+    },
+    features: {
+      fr: ["Verre transparent élégant", "Henné naturel & Serghina", "Souvenir 100% traditionnel"],
+      en: ["Elegant clear glass", "Natural Henna & Serghina", "100% traditional souvenir"],
+      es: ["Elegante vidrio transparente", "Henna natural y Serghina", "Recuerdo 100% tradicional"],
+      ar: ["زجاج شفاف أنيق", "حناء طبيعية وسرغينة", "تذكار تقليدي بامتياز"],
+    },
+  },
+  
 ];

@@ -9,101 +9,108 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative w-full min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-100px)] flex items-center justify-center bg-white overflow-hidden pt-28 pb-16 lg:pt-28 lg:pb-20">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full z-10">
-        
-        {/* Layout: Text on top (mobile), Side-by-side (desktop) */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+    <section className="relative w-full min-h-[calc(100vh-80px)] lg:min-h-[calc(100vh-100px)] flex items-end bg-black overflow-hidden">
 
-          {/* ── TEXT SECTION ────────────────────────────────── */}
-          <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left mb-6 lg:mb-0">
-            
-            {/* Eyebrow */}
-            <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
-              <div aria-hidden="true" className="h-[1px] w-8 sm:w-12 bg-gray-900 hidden lg:block" />
-              <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-900">
-                {t.hero.eyebrow || BRAND_NAME}
-              </span>
-            </div>
+      {/* ── FULL-BLEED BACKGROUND IMAGE ─────────────────── */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={HERO_CONTENT.imagePath}
+          alt={HERO_CONTENT.imageAlt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center scale-[1.02] transition-transform duration-[8s] ease-out"
+          style={{ animationName: "kenburns" }}
+        />
 
-            {/* Title */}
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-[5rem] xl:text-[5.5rem] text-gray-900 leading-[1.05] tracking-tight mb-6">
-              {HERO_CONTENT.title}
-            </h1>
+        {/* Cinematic gradient overlay — bottom-heavy */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/10" />
 
-            {/* Subtitle */}
-            <p className="text-sm sm:text-[15px] text-gray-500 leading-relaxed font-serif italic max-w-md mx-auto lg:mx-0 mb-10">
-              {t.hero.subtitle}
-            </p>
+        {/* Subtle left vignette to ground the text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
+      </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <Link
-                href="#order"
-                className="w-full sm:w-auto text-center px-10 py-4 text-[10px] font-bold tracking-[0.25em] uppercase bg-[#1A1A1A] text-white hover:bg-[#6A4C4C] transition-colors duration-500 shadow-lg shadow-black/5"
-              >
-                {t.hero.ctaPrimary}
-              </Link>
-              <Link
-                href="#collection"
-                className="w-full sm:w-auto text-center px-10 py-4 text-[10px] font-bold tracking-[0.25em] uppercase border border-gray-200 text-gray-900 hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-500"
-              >
-                {t.hero.ctaSecondary}
-              </Link>
-            </div>
+      {/* ── FOREGROUND CONTENT ──────────────────────────── */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-16 pb-16 lg:pb-24 pt-32">
 
-            {/* Cities / Villes */}
-            <div className="hidden sm:flex flex-wrap items-center justify-center lg:justify-start gap-x-8 gap-y-4 pt-12 sm:pt-16 text-[9px] tracking-[0.2em] uppercase text-gray-400 font-bold">
-              <span className="hover:text-gray-900 transition-colors cursor-default">{t.hero.city1 || "Tanger"}</span>
-              <span className="hover:text-gray-900 transition-colors cursor-default">{t.hero.city2 || "Tétouan"}</span>
-              <span className="hover:text-gray-900 transition-colors cursor-default">{t.hero.city3 || "Maroc"}</span>
-            </div>
-          </div>
-
-          {/* ── IMAGE SECTION ───────────────────────────────── */}
-          <div className="w-full lg:w-1/2 relative flex justify-center lg:justify-end group mt-4 lg:mt-0">
-            
-            {/* Main Image Container */}
-            <div className="relative w-full max-w-[320px] sm:max-w-[400px] lg:max-w-[420px] xl:max-w-[460px] aspect-[4/5] mx-auto lg:mr-8 z-10">
-              
-              {/* Offset Shadow Block */}
-              <div aria-hidden="true" className="absolute top-4 sm:top-8 -right-3 sm:-right-6 w-full h-full bg-[#F9F7F6] z-0 transition-transform duration-700 ease-out group-hover:translate-x-2 group-hover:-translate-y-2" />
-              
-              {/* Image */}
-              <div className="relative w-full h-full z-10 overflow-hidden shadow-2xl shadow-black/5">
-                <Image
-                  src={HERO_CONTENT.imagePath}
-                  alt={HERO_CONTENT.imageAlt}
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-[2s] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-105"
-                />
-              </div>
-
-              {/* Rotating Badge */}
-              <div 
-                aria-hidden="true" 
-                className="absolute -bottom-4 -left-4 sm:-bottom-8 sm:-left-8 lg:-bottom-10 lg:-left-10 w-20 h-20 sm:w-24 sm:h-24 lg:w-32 lg:h-32 animate-[spin_12s_linear_infinite] z-20 bg-white rounded-full p-1.5 sm:p-2 shadow-xl flex items-center justify-center pointer-events-none"
-              >
-                <svg viewBox="0 0 100 100" className="w-full h-full text-gray-900">
-                  <defs>
-                    <path id="circlePath" d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
-                  </defs>
-                  <text fontSize="10.5" fontWeight="bold" letterSpacing="0.15em" className="uppercase font-sans">
-                    <textPath href="#circlePath" startOffset="0%">
-                      {BRAND_NAME} • LUXURY COLLECTION • 
-                    </textPath>
-                  </text>
-                </svg>
-                {/* Badge Center Dot */}
-                <div className="absolute w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 bg-[#6A4C4C] rounded-full" />
-              </div>
-
-            </div>
-          </div>
-
+        {/* Top-left brand tag (positioned absolute from section) */}
+        <div className="absolute top-10 left-6 lg:left-16 flex items-center gap-3">
+          <div className="h-[1px] w-8 bg-white/40" />
+          <span className="text-[9px] uppercase tracking-[0.35em] text-white/60 font-bold">
+            {t.hero.eyebrow || BRAND_NAME}
+          </span>
         </div>
+
+        {/* Cities — top right */}
+        <div className="absolute top-10 right-6 lg:right-16 hidden sm:flex items-center gap-6 text-[9px] tracking-[0.2em] uppercase text-white/40 font-bold">
+          <span>{t.hero.city1 || "Tanger"}</span>
+          <span className="text-white/20">·</span>
+          <span>{t.hero.city2 || "Tétouan"}</span>
+          <span className="text-white/20">·</span>
+          <span>{t.hero.city3 || "Maroc"}</span>
+        </div>
+
+        {/* Main text block */}
+        <div className="max-w-3xl">
+
+          {/* Title */}
+          <h1 className="font-serif text-5xl sm:text-7xl lg:text-[6rem] xl:text-[7rem] text-white leading-[1.0] tracking-tight mb-6">
+            {HERO_CONTENT.title}
+          </h1>
+
+          {/* Divider line */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-[1px] w-12 bg-[#C8966C]" />
+            <div className="h-[1px] flex-1 max-w-[60px] bg-white/10" />
+          </div>
+
+          {/* Subtitle */}
+          <p className="text-sm sm:text-base text-white/60 leading-relaxed font-serif italic max-w-sm mb-10">
+            {t.hero.subtitle}
+          </p>
+
+          {/* CTA Row */}
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <Link
+              href="#order"
+              className="inline-block px-10 py-4 text-[10px] font-bold tracking-[0.25em] uppercase bg-white text-black hover:bg-[#C8966C] hover:text-white transition-colors duration-500 shadow-lg shadow-black/30"
+            >
+              {t.hero.ctaPrimary}
+            </Link>
+            <Link
+              href="#collection"
+              className="inline-block px-10 py-4 text-[10px] font-bold tracking-[0.25em] uppercase border border-white/30 text-white/80 hover:border-white hover:text-white transition-all duration-500"
+            >
+              {t.hero.ctaSecondary}
+            </Link>
+          </div>
+        </div>
+
+        {/* Rotating Badge — bottom right */}
+        <div
+          aria-hidden="true"
+          className="absolute bottom-16 right-6 lg:right-16 w-24 h-24 lg:w-28 lg:h-28 animate-[spin_12s_linear_infinite] pointer-events-none"
+        >
+          <svg viewBox="0 0 100 100" className="w-full h-full text-white/70">
+            <defs>
+              <path id="circlePath" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" />
+            </defs>
+            <text fontSize="10.5" fontWeight="bold" letterSpacing="0.15em" fill="currentColor" className="uppercase font-sans">
+              <textPath href="#circlePath" startOffset="0%">
+                {BRAND_NAME} • LUXURY COLLECTION •
+              </textPath>
+            </text>
+          </svg>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-2 h-2 bg-[#C8966C] rounded-full" />
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
+          <div className="w-[1px] h-10 bg-white animate-[pulse_2s_ease-in-out_infinite]" />
+        </div>
+
       </div>
     </section>
   );
