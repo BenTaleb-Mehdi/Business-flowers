@@ -8,6 +8,7 @@ import FloatingContact from "@/app/components/FloatingContact";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import SmoothScroll from "./components/SmoothScroll";
+import { Analytics } from "@vercel/analytics/next";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -60,6 +61,7 @@ export default function RootLayout({
         </LanguageProvider>
         </SmoothScroll>
             <FloatingContact />
+        <Analytics />
       </body>
     </html>
   );
