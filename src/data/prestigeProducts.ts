@@ -43,6 +43,31 @@ title: {
       ar: ["زجاج فاخر", "زهور طبيعية مجففة", "بطاقة مخصصة"],
     },
   },
+    {
+    id: "fioles-henna-serghina",
+    price: "35",
+    images: ["/images/products/Traditions/image1.jpeg"], // Dakhhel s-smiya dyal tsawira hna
+    category: { fr: "Traditions", en: "Traditions", es: "Tradiciones", ar: "تقاليد" },
+    title: { 
+      fr: "Fioles en verre avec poudre de Henné et serghina", 
+      en: "Glass Vials with Henna Powder and Serghina", 
+      es: "Viales de vidrio con polvo de Henna y Serghina", 
+      ar: "قوارير زجاجية بمسحوق الحناء والسرغينة" 
+    },
+    subtitle: { fr: "Authenticité marocaine", en: "Moroccan authenticity", es: "Autenticidad marroquí", ar: "أصالة مغربية" },
+    description: {
+      fr: "De magnifiques petites fioles en verre remplies de poudre de henné traditionnelle et de serghina parfumée. Un souvenir authentique et parfumé pour vos cérémonies.",
+      en: "Beautiful small glass vials filled with traditional henna powder and scented serghina. An authentic and fragrant souvenir for your ceremonies.",
+      es: "Hermosos pequeños viales de vidrio llenos de polvo de henna tradicional y serghina perfumada. Un recuerdo auténtico y fragante para tus ceremonias.",
+      ar: "قوارير زجاجية صغيرة ورائعة مليئة بمسحوق الحناء التقليدي والسرغينة المعطرة. تذكار أصيل يعبق بالروائح الزكية لمناسباتكم.",
+    },
+    features: {
+      fr: ["Verre transparent élégant", "Henné naturel & Serghina", "Souvenir 100% traditionnel"],
+      en: ["Elegant clear glass", "Natural Henna & Serghina", "100% traditional souvenir"],
+      es: ["Elegante vidrio transparente", "Henna natural y Serghina", "Recuerdo 100% tradicional"],
+      ar: ["زجاج شفاف أنيق", "حناء طبيعية وسرغينة", "تذكار تقليدي بامتياز"],
+    },
+  },
   {
     id: "peigne-bois-boheme",
     price: "35",
@@ -75,16 +100,16 @@ title: {
     title: { fr: "Kit Henna Day", en: "Henna Day Kit", es: "Kit Henna Day", ar: "مجموعة يوم الحناء" },
     subtitle: { fr: "Élégance & Tradition", en: "Elegance & Tradition", es: "Elegancia y Tradición", ar: "الأناقة والتقاليد" },
     description: {
-      fr: "Un ensemble raffiné présenté sur une carte personnalisée, comprenant un élégant chouchou en satin et un délicat peigne en bois. Le cadeau d'invité parfait pour sublimer votre journée de henné.",
-      en: "A refined set presented on a personalized card, featuring an elegant satin scrunchie and a delicate wooden comb. The perfect guest favor to elevate your henna day.",
-      es: "Un conjunto refinado presentado en una tarjeta personalizada, que incluye un elegante coletero de satén y un delicado peine de madera. El detalle perfecto para realzar tu día de henna.",
-      ar: "مجموعة راقية مقدمة على بطاقة مخصصة، تتضمن ربطة شعر أنيقة من الساتان ومشطاً خشبياً رقيقاً. هدية الضيوف المثالية لتخليد ذكرى يوم الحناء الخاص بك.",
+      fr: "Un ensemble raffiné présenté sur une carte personnalisée, comprenant un élégant chouchou en satin . Le cadeau d'invité parfait pour sublimer votre journée de henné.",
+      en: "A refined set presented on a personalized card, featuring an elegant satin scrunchie . The perfect guest favor to elevate your henna day.",
+      es: "Un conjunto refinado presentado en una tarjeta personalizada, que incluye un elegante coletero de satén. El detalle perfecto para realzar tu día de henna.",
+      ar: "مجموعة راقية مقدمة على بطاقة مخصصة، تتضمن ربطة شعر أنيقة من الساتان . هدية الضيوف المثالية لتخليد ذكرى يوم الحناء الخاص بك.",
     },
     features: {
-      fr: ["Chouchou en satin soyeux", "Peigne en bois naturel", "Carte de présentation sur mesure"],
-      en: ["Silky satin scrunchie", "Natural wooden comb", "Custom presentation card"],
-      es: ["Coletero de satén sedoso", "Peine de madera natural", "Tarjeta de presentación a medida"],
-      ar: ["ربطة شعر من الساتان الحريري", "مشط من الخشب الطبيعي", "بطاقة تقديم مخصصة بالكامل"],
+      fr: ["Chouchou en satin soyeux", "Carte de présentation sur mesure"],
+      en: ["Silky satin scrunchie", "Custom presentation card"],
+      es: ["Coletero de satén sedoso", "Tarjeta de presentación a medida"],
+      ar: ["ربطة شعر من الساتان الحريري", "بطاقة تقديم مخصصة بالكامل"],
     },
   },
   {
@@ -166,7 +191,7 @@ title: {
   {
     id: "carte-remerciement-chocolat",
     price: "45",
-    images: ["/images/products/Cartes/image1.jpeg","/images/products/Cartes/image2.jpeg","/images/products/Cartes/image3.jpeg"], // Dakhhel s-smiya dyal tsawira hna
+    images: ["/images/products/Cartes/image1.jpeg","/images/products/Cartes/image2.jpeg","/images/products/Cartes/image3.jpeg","/images/products/Cartes/image4.jpeg","/images/products/Cartes/image5.jpeg","/images/products/Cartes/image6.jpeg"], // Dakhhel s-smiya dyal tsawira hna
     category: { fr: "Cartes", en: "Cards", es: "Tarjetas", ar: "بطاقات" },
     title: { 
       fr: "Carte de remerciement élégante avec chocolat", 
@@ -216,7 +241,7 @@ title: {
   {
     id: "bouteille-miel-elegante",
     price: "55",
-    images: ["/images/products/Miel/image1.jpeg","/images/products/Miel/image2.jpeg","/images/products/Miel/image3.jpeg","/images/products/Miel/image4.jpeg"], 
+    images: ["/images/products/Miel/image1.jpeg"], 
     category: { fr: "Miel", en: "Honey", es: "Miel", ar: "عسل" },
     title: { 
       fr: "Bouteille de miel avec un design élégant", 
@@ -288,7 +313,6 @@ title: {
       ar: ["كروشيه مصنوع يدوياً", "شوكولاتة عالية الجودة", "تخصيص حسب الطلب"],
     },
   },
-
   {
     id: "carte-remerciement-parfum",
     price: "55",
@@ -315,30 +339,6 @@ title: {
     },
   },
 
-  {
-    id: "fioles-henna-serghina",
-    price: "35",
-    images: ["/images/products/Traditions/image1.jpeg"], // Dakhhel s-smiya dyal tsawira hna
-    category: { fr: "Traditions", en: "Traditions", es: "Tradiciones", ar: "تقاليد" },
-    title: { 
-      fr: "Fioles en verre avec poudre de Henné et serghina", 
-      en: "Glass Vials with Henna Powder and Serghina", 
-      es: "Viales de vidrio con polvo de Henna y Serghina", 
-      ar: "قوارير زجاجية بمسحوق الحناء والسرغينة" 
-    },
-    subtitle: { fr: "Authenticité marocaine", en: "Moroccan authenticity", es: "Autenticidad marroquí", ar: "أصالة مغربية" },
-    description: {
-      fr: "De magnifiques petites fioles en verre remplies de poudre de henné traditionnelle et de serghina parfumée. Un souvenir authentique et parfumé pour vos cérémonies.",
-      en: "Beautiful small glass vials filled with traditional henna powder and scented serghina. An authentic and fragrant souvenir for your ceremonies.",
-      es: "Hermosos pequeños viales de vidrio llenos de polvo de henna tradicional y serghina perfumada. Un recuerdo auténtico y fragante para tus ceremonias.",
-      ar: "قوارير زجاجية صغيرة ورائعة مليئة بمسحوق الحناء التقليدي والسرغينة المعطرة. تذكار أصيل يعبق بالروائح الزكية لمناسباتكم.",
-    },
-    features: {
-      fr: ["Verre transparent élégant", "Henné naturel & Serghina", "Souvenir 100% traditionnel"],
-      en: ["Elegant clear glass", "Natural Henna & Serghina", "100% traditional souvenir"],
-      es: ["Elegante vidrio transparente", "Henna natural y Serghina", "Recuerdo 100% tradicional"],
-      ar: ["زجاج شفاف أنيق", "حناء طبيعية وسرغينة", "تذكار تقليدي بامتياز"],
-    },
-  },
+
   
 ];
