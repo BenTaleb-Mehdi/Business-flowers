@@ -63,24 +63,28 @@ title: {
       ar: ["خشب صديق للبيئة", "زينة يدوية", "طابع بوهيمي"],
     },
   },
-  {
+{
     id: "kit-henna-day",
     price: "85",
-    images: ["/images/products/Sets Cadeaux/image1.jpeg","/images/products/Sets Cadeaux/image2.jpeg","/images/products/Sets Cadeaux/image3.jpeg",],
+    images: [
+      "/images/products/Sets Cadeaux/image1.jpeg",
+      "/images/products/Sets Cadeaux/image2.jpeg",
+      "/images/products/Sets Cadeaux/image3.jpeg",
+    ],
     category: { fr: "Sets Cadeaux", en: "Gift Sets", es: "Sets de Regalo", ar: "مجموعات هدايا" },
     title: { fr: "Kit Henna Day", en: "Henna Day Kit", es: "Kit Henna Day", ar: "مجموعة يوم الحناء" },
     subtitle: { fr: "Élégance & Tradition", en: "Elegance & Tradition", es: "Elegancia y Tradición", ar: "الأناقة والتقاليد" },
     description: {
-      fr: "Kit complet incluant un chouchou en satin et un peigne en bois, idéal pour offrir à vos invités.",
-      en: "Complete kit including a satin scrunchie and wooden comb, perfect for your guests.",
-      es: "Kit completo que incluye un coletero de satén y un peine de madera, perfecto para tus invitados.",
-      ar: "مجموعة متكاملة تضم ربطة شعر (سكراونشي) ساتان ومشط خشبي، مثالية كهدايا للضيوف.",
+      fr: "Un ensemble raffiné présenté sur une carte personnalisée, comprenant un élégant chouchou en satin et un délicat peigne en bois. Le cadeau d'invité parfait pour sublimer votre journée de henné.",
+      en: "A refined set presented on a personalized card, featuring an elegant satin scrunchie and a delicate wooden comb. The perfect guest favor to elevate your henna day.",
+      es: "Un conjunto refinado presentado en una tarjeta personalizada, que incluye un elegante coletero de satén y un delicado peine de madera. El detalle perfecto para realzar tu día de henna.",
+      ar: "مجموعة راقية مقدمة على بطاقة مخصصة، تتضمن ربطة شعر أنيقة من الساتان ومشطاً خشبياً رقيقاً. هدية الضيوف المثالية لتخليد ذكرى يوم الحناء الخاص بك.",
     },
     features: {
-      fr: ["Satin de haute qualité", "Peigne en bois", "Carte personnalisée"],
-      en: ["High quality satin", "Wooden comb", "Custom card"],
-      es: ["Satén de alta calidad", "Peine de madera", "Tarjeta personalizada"],
-      ar: ["ساتان عالي الجودة", "مشط خشبي", "بطاقة مخصصة"],
+      fr: ["Chouchou en satin soyeux", "Peigne en bois naturel", "Carte de présentation sur mesure"],
+      en: ["Silky satin scrunchie", "Natural wooden comb", "Custom presentation card"],
+      es: ["Coletero de satén sedoso", "Peine de madera natural", "Tarjeta de presentación a medida"],
+      ar: ["ربطة شعر من الساتان الحريري", "مشط من الخشب الطبيعي", "بطاقة تقديم مخصصة بالكامل"],
     },
   },
   {
@@ -137,7 +141,7 @@ title: {
   {
     id: "boites-mariage-champetre",
     price: "70",
-    images: ["/images/products/Dragées/image1.jpeg","/images/products/Dragées/image2.jpeg","/images/products/Dragées/image3.jpeg"],
+    images: ["/images/products/Dragées/image1.jpeg","/images/products/Dragées/image2.jpeg"],
     category: { fr: "Mariage", en: "Wedding", es: "Boda", ar: "زفاف" },
     title: { 
       fr: "Dragées Personnalisées", 
