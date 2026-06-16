@@ -1,8 +1,19 @@
 // Centralized content file for the luxury Moroccan wedding landing page.
 // All copy, image paths, metadata, and configurations are stored here.
 
-export const BRAND_NAME = "Hand touch";
-export const TARGET_PHONE_NUMBER = "+212630829654"; // Format: CCXXXXXXXXX (without +, spaces or dashes for WhatsApp link)
+export const BRAND_NAME = "Hand Touch";
+export const TARGET_PHONE_NUMBER = "+212632650030"; // Format: CCXXXXXXXXX (without +, spaces or dashes for WhatsApp link)
+
+// Centralized Contact & Address Information
+export const CONTACT_EMAIL = "contact@handtouch.ma";
+export const CONTACT_PHONE_DISPLAY = "+212 6 32 65 00 30";
+
+export const INSTAGRAM_URL = "https://www.instagram.com/hand__touch18";
+export const FACEBOOK_URL = "https://web.facebook.com/hand.touche";
+
+
+
+
 
 export const SEO_METADATA = {
   title: "Hand touch | Luxury Event Favors & Custom Gifts",
@@ -32,18 +43,6 @@ export const LOCAL_BUSINESS_SCHEMA = {
   "address": [
     {
       "@type": "PostalAddress",
-      "streetAddress": "Boulevard Mohamed V",
-      "addressLocality": "Tanger",
-      "addressRegion": "Tanger-Tétouan-Al Hoceïma",
-      "postalCode": "90000",
-      "addressCountry": "MA"
-    },
-    {
-      "@type": "PostalAddress",
-      "streetAddress": "Avenue Hassan II",
-      "addressLocality": "Tétouan",
-      "addressRegion": "Tanger-Tétouan-Al Hoceïma",
-      "postalCode": "93000",
       "addressCountry": "MA"
     }
   ],
@@ -52,15 +51,10 @@ export const LOCAL_BUSINESS_SCHEMA = {
     "latitude": "35.7595",
     "longitude": "-5.8340"
   },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-    "opens": "09:00",
-    "closes": "19:00"
-  },
+ 
   "sameAs": [
-    "https://www.instagram.com/hand__touch18",
-    "https://www.facebook.com/handtouch"
+    INSTAGRAM_URL,
+    FACEBOOK_URL
   ]
 };
 

@@ -2,7 +2,15 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/app/components/LanguageProvider";
-import { FOOTER_CONTENT, BRAND_NAME } from "@/src/data/content";
+import { 
+  FOOTER_CONTENT, 
+  BRAND_NAME, 
+  CONTACT_EMAIL, 
+  CONTACT_PHONE_DISPLAY, 
+  INSTAGRAM_URL, 
+  FACEBOOK_URL,
+  TARGET_PHONE_NUMBER
+} from "@/src/data/content";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -60,17 +68,15 @@ export default function Footer() {
               {f.contactLabel}
             </h4>
             <div className="space-y-3 sm:space-y-4 text-[10px] text-gray-400 font-medium">
-              <p className="hover:text-white transition-colors cursor-default">{f.address1}</p>
-              <p className="hover:text-white transition-colors cursor-default">{f.address2}</p>
               <div className="pt-3 sm:pt-4 space-y-3 sm:space-y-4">
                 <p>
-                  <a href="mailto:contact@maisonlayal.com" className="hover:text-white transition-colors">
-                    contact@maisonlayal.com
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white transition-colors">
+                    {CONTACT_EMAIL}
                   </a>
                 </p>
                 <p>
-                  <a href="tel:+212600000000" className="hover:text-white transition-colors">
-                    +212 6 00 00 00 00
+                  <a href={`tel:${TARGET_PHONE_NUMBER}`} className="hover:text-white transition-colors">
+                    {CONTACT_PHONE_DISPLAY}
                   </a>
                 </p>
               </div>
@@ -84,7 +90,7 @@ export default function Footer() {
             </h4>
             <div className="flex flex-col space-y-3 sm:space-y-4">
               <a
-                href="https://www.instagram.com/maisonlayal"
+                href={INSTAGRAM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[10px] text-gray-400 hover:text-white transition-colors duration-300 font-medium flex items-center gap-3"
@@ -95,7 +101,7 @@ export default function Footer() {
                 Instagram
               </a>
               <a
-                href="https://www.facebook.com/maisonlayal"
+                href={FACEBOOK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[10px] text-gray-400 hover:text-white transition-colors duration-300 font-medium flex items-center gap-3"

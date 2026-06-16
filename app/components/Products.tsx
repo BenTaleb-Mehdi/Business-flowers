@@ -7,7 +7,7 @@ import { useLanguage } from "@/app/components/LanguageProvider";
 import { HAND_TOUCH_PRODUCTS, type MultilingualProductItem } from "@/src/data/prestigeProducts";
 import type { Language } from "@/src/data/translations";
 import OrderModal from "./OrderModal"; 
-import ProductCard from "./ProductCard"; // <-- Importation du nouveau composant !
+import ProductCard from "./ProductCard"; 
 
 function ProductImage({ src, alt }: { src: string; alt: string }) {
   const [hasError, setHasError] = useState(false);
@@ -266,20 +266,23 @@ export default function Products() {
       </div>
 
       <div className="flex flex-col lg:flex-row gap-12 xl:gap-24 relative items-start">
+        {/* S-Sidebar dyal l-mobile & Desktop */}
         <aside
-          className={`fixed inset-y-0 left-0 z-[70] lg:z-0 w-[85vw] max-w-[350px] bg-[#F9F7F6] p-8 lg:p-0 transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] lg:sticky lg:top-32 lg:translate-x-0 lg:w-48 lg:bg-transparent lg:flex-shrink-0 h-fit ${
+          className={`fixed inset-y-0 left-0 z-[99999] lg:z-0 w-[280px] bg-[#F9F7F6] p-8 lg:p-0 transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] lg:sticky lg:top-32 lg:translate-x-0 lg:w-48 lg:bg-transparent lg:flex-shrink-0 h-screen lg:h-fit overflow-y-auto pb-32 lg:pb-0 ${
             isMobileFilterOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full lg:shadow-none"
           }`}
         >
+          {/* Bouton fermer */}
           <button
             onClick={() => setIsMobileFilterOpen(false)}
-            className="lg:hidden absolute top-6 right-6 w-8 h-8 flex flex-col items-center justify-center group"
+            className="lg:hidden absolute top-6 right-6 w-8 h-8 flex flex-col items-center justify-center group z-50 cursor-pointer"
           >
             <span className="w-5 h-[1.5px] bg-gray-900 rotate-45 translate-y-[0.75px]" />
             <span className="w-5 h-[1.5px] bg-gray-900 -rotate-45 -translate-y-[0.75px]" />
           </button>
 
-          <div className="space-y-10 pt-20 lg:pt-0">
+          {/* Contenu du filtre */}
+          <div className="space-y-10 pt-12 lg:pt-0">
             <div>
               <h3 className="text-[10px] font-bold tracking-[0.25em] uppercase text-gray-900 mb-6">
                 {currentStrings.categories}
@@ -324,10 +327,6 @@ export default function Products() {
           </div>
         </aside>
 
-        {isMobileFilterOpen && (
-          <div className="fixed inset-0 bg-gray-900/20 backdrop-blur-sm z-[65] lg:hidden" onClick={() => setIsMobileFilterOpen(false)} />
-        )}
-
         <div className="flex-1 w-full">
           <div className="mb-8 hidden lg:block">
             <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-gray-400">
@@ -361,6 +360,18 @@ export default function Products() {
         </div>
       </div>
 
+      {/* OVERLAY S-Sadd (Portal style outside the flex container to handle body-level background clicks) */}
+      {isMobileFilterOpen && (
+        <div 
+          className="fixed inset-0 bg-gray-900/20 backdrop-blur-sm z-[99990] lg:hidden cursor-pointer" 
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsMobileFilterOpen(false);
+          }} 
+        />
+      )}
+
       {/* RENDER MODALS */}
       {productModal}
 
@@ -375,6 +386,21 @@ export default function Products() {
           __html: `
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* RADICAL FIX: Hide specific overlaying chat elements only when filters are active */
+        ${isMobileFilterOpen ? `
+          div[class*="fixed"], 
+          div[class*="absolute"],
+          button[class*="fixed"],
+          button[class*="absolute"],
+          iframe, 
+          .tawk-min-container,
+          #chat-widget-container { 
+            &:not([class*="z-[99995]"]):not([class*="z-[99999]"]):not([class*="z-50"]):not([class*="z-[99990]"]) {
+              display: none !important;
+            }
+          }
+        ` : ''}
       `,
         }}
       />

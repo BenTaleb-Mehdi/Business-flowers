@@ -51,7 +51,9 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 transition-all duration-500 ${
+          isMobileMenuOpen ? "z-[99999]" : "z-50"
+        } ${
           isLight
             ? "bg-white/96 backdrop-blur-md py-4 border-b border-gray-100 shadow-[0_4px_24px_-8px_rgba(0,0,0,0.06)]"
             : "bg-transparent py-6 border-b border-white/10"
@@ -187,7 +189,7 @@ export default function Navbar() {
 
       {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-[60] transition-opacity duration-500 md:hidden ${
+        className={`fixed inset-0 bg-black/40 backdrop-blur-sm z-[99990] transition-opacity duration-500 md:hidden ${
           isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsMobileMenuOpen(false)}
@@ -195,7 +197,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <aside
-        className={`fixed top-0 left-0 bottom-0 w-[85vw] max-w-[400px] bg-[#F9F7F6] z-[70] shadow-2xl flex flex-col justify-between pt-28 pb-12 px-8 md:hidden transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+        className={`fixed top-0 left-0 bottom-0 w-[85vw] max-w-[400px] bg-[#F9F7F6] z-[99995] shadow-2xl flex flex-col justify-between pt-28 pb-12 px-8 md:hidden transition-transform duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >

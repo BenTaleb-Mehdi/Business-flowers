@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/app/components/LanguageProvider";
+import { CONTACT_EMAIL, CONTACT_PHONE_DISPLAY } from "@/src/data/content";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -30,21 +31,15 @@ export default function Contact() {
             <div className="w-8 h-[1px] bg-gray-300 mb-10 sm:mb-12" />
 
             <div className="space-y-10 sm:space-y-12">
-              <div>
-                <h4 className="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-4">{c.addressLabel}</h4>
-                <p className="text-sm text-gray-900 font-serif italic mb-2">{c.address1}</p>
-                <p className="text-sm text-gray-900 font-serif italic">{c.address2}</p>
-              </div>
+              
 
               <div>
                 <h4 className="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-4">{c.coordsLabel}</h4>
-                <p className="text-sm text-gray-900 font-serif italic mb-2">contact@maisonlayal.com</p>
-                <p className="text-sm text-gray-900 font-serif italic">+212 6 00 00 00 00</p>
+                <p className="text-sm text-gray-900 font-serif italic mb-2">{CONTACT_EMAIL}</p>
+                <p className="text-sm text-gray-900 font-serif italic">{CONTACT_PHONE_DISPLAY}</p>
               </div>
 
               <div>
-                <h4 className="text-[9px] font-bold tracking-[0.2em] uppercase text-gray-400 mb-4">{c.hoursLabel}</h4>
-                <p className="text-sm text-gray-900 font-serif italic">{c.hours}</p>
               </div>
             </div>
           </div>

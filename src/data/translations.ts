@@ -1,9 +1,7 @@
-// ============================================================
-// Centralized Translation Dictionary
-// Supported Languages: French (fr), English (en), Spanish (es), Arabic (ar)
-// ============================================================
+import {  } from "./content";
 
 export type Language = "fr" | "en" | "es" | "ar";
+
 
 export const SUPPORTED_LANGUAGES: { code: Language; label: string; flag: string; dir: "ltr" | "rtl" }[] = [
   { code: "fr", label: "FR", flag: "🇫🇷", dir: "ltr" },
@@ -63,11 +61,10 @@ export const translations = {
       breadcrumbCurrent: "Contact",
       title: "Prenons\nContact.",
       addressLabel: "Adresses",
-      address1: "Boulevard Mohamed V, Tanger",
-      address2: "Avenue Hassan II, Tétouan",
+   
       coordsLabel: "Coordonnées",
       hoursLabel: "Heures d'Ouverture",
-      hours: "Lundi - Samedi : 09:00 - 19:00",
+
       nameLabel: "Nom Complet *",
       phoneLabel: "Téléphone *",
       subjectLabel: "Sujet",
@@ -78,8 +75,8 @@ export const translations = {
       discoverLabel: "Découvrir",
       contactLabel: "Ateliers & Contact",
       socialsLabel: "Réseaux",
-      address1: "Boulevard Mohamed V, Tanger",
-      address2: "Avenue Hassan II, Tétouan",
+
+      
       city1: "Tanger",
       city2: "Tétouan",
       country: "Maroc",
@@ -168,11 +165,8 @@ export const translations = {
       breadcrumbCurrent: "Contact",
       title: "Let's\nConnect.",
       addressLabel: "Addresses",
-      address1: "Boulevard Mohamed V, Tangier",
-      address2: "Avenue Hassan II, Tetouan",
       coordsLabel: "Contact Details",
-      hoursLabel: "Opening Hours",
-      hours: "Monday – Saturday: 09:00 – 19:00",
+
       nameLabel: "Full Name *",
       phoneLabel: "Phone *",
       subjectLabel: "Subject",
@@ -183,8 +177,6 @@ export const translations = {
       discoverLabel: "Discover",
       contactLabel: "Ateliers & Contact",
       socialsLabel: "Follow Us",
-      address1: "Boulevard Mohamed V, Tangier",
-      address2: "Avenue Hassan II, Tetouan",
       city1: "Tangier",
       city2: "Tetouan",
       country: "Morocco",
@@ -273,11 +265,10 @@ export const translations = {
       breadcrumbCurrent: "Contacto",
       title: "Hablemos.",
       addressLabel: "Direcciones",
-      address1: "Boulevard Mohamed V, Tánger",
-      address2: "Avenue Hassan II, Tetuán",
+
       coordsLabel: "Datos de Contacto",
-      hoursLabel: "Horario de Apertura",
-      hours: "Lunes – Sábado: 09:00 – 19:00",
+
+
       nameLabel: "Nombre Completo *",
       phoneLabel: "Teléfono *",
       subjectLabel: "Asunto",
@@ -288,8 +279,8 @@ export const translations = {
       discoverLabel: "Descubrir",
       contactLabel: "Ateliers & Contacto",
       socialsLabel: "Redes Sociales",
-      address1: "Boulevard Mohamed V, Tánger",
-      address2: "Avenue Hassan II, Tetuán",
+
+      
       city1: "Tánger",
       city2: "Tetuán",
       country: "Marruecos",
@@ -378,11 +369,10 @@ export const translations = {
       breadcrumbCurrent: "اتصل بنا",
       title: "تواصل\nمعنا.",
       addressLabel: "العناوين",
-      address1: "بوليفار محمد الخامس، طنجة",
-      address2: "شارع الحسن الثاني، تطوان",
+ 
       coordsLabel: "بيانات الاتصال",
-      hoursLabel: "ساعات العمل",
-      hours: "الاثنين – السبت: ٠٩:٠٠ – ١٩:٠٠",
+    
+
       nameLabel: "الاسم الكامل *",
       phoneLabel: "الهاتف *",
       subjectLabel: "الموضوع",
@@ -393,8 +383,8 @@ export const translations = {
       discoverLabel: "اكتشف",
       contactLabel: "الأتيليه والاتصال",
       socialsLabel: "تابعنا",
-      address1: "بوليفار محمد الخامس، طنجة",
-      address2: "شارع الحسن الثاني، تطوان",
+
+
       city1: "طنجة",
       city2: "تطوان",
       country: "المغرب",
