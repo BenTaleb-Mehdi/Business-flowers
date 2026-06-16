@@ -4,6 +4,7 @@ import "./globals.css";
 import { LOCAL_BUSINESS_SCHEMA } from "@/src/data/content";
 import { LanguageProvider } from "@/app/components/LanguageProvider";
 import FloatingContact from "@/app/components/FloatingContact";
+import { Analytics } from "@vercel/analytics/next"
 // Import your global Navbar and Footer
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
