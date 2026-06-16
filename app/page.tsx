@@ -4,6 +4,7 @@ import BackgroundCanvas from "@/app/components/BackgroundCanvas";
 import Hero from "@/app/components/Hero";
 import Collection from "@/app/components/Collection";
 import HowItWorks from "@/app/components/HowItWorks";
+import { Analytics } from '@vercel/analytics/next';
 import FloatingContact from "@/app/components/FloatingContact";
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function Home() {
         <Hero />
         <Collection />
         <HowItWorks />
+        <Analytics />
       </div>
 
   
