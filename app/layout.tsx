@@ -61,6 +61,7 @@ export default function RootLayout({
         </LanguageProvider>
         </SmoothScroll>
             <FloatingContact />
+                  <Analytics />
       </body>
     </html>
   );
