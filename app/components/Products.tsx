@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation"; // <-- IMPORT AJOUTÉ
 import { useLanguage } from "@/app/components/LanguageProvider";
 import { HAND_TOUCH_PRODUCTS, type MultilingualProductItem } from "@/src/data/prestigeProducts";
 import type { Language } from "@/src/data/translations";
@@ -28,6 +29,10 @@ function ProductImage({ src, alt }: { src: string; alt: string }) {
 export default function Products() {
   const { t, lang } = useLanguage();
   const l = lang as Language;
+
+  // <-- LECTURE DE L'URL AJOUTÉE -->
+  const searchParams = useSearchParams();
+  const categoryFromUrl = searchParams.get("category");
 
   const [activeCategory, setActiveCategory] = useState("");
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
@@ -105,10 +110,26 @@ export default function Products() {
 
   const currentStrings = localStrings[l] || localStrings.fr;
 
+  // <-- LOGIQUE DE FILTRAGE INITIAL VIA URL AJOUTÉE -->
   useEffect(() => {
     setMounted(true);
-    setActiveCategory(currentStrings.all);
-  }, [currentStrings.all]);
+    
+    if (categoryFromUrl) {
+      // On cherche un produit dont l'ID de catégorie correspond à l'URL
+      const matchedProduct = HAND_TOUCH_PRODUCTS.find(
+        (p) => p.category.fr.toLowerCase().replace(/\s+/g, '-') === categoryFromUrl
+      );
+      
+      if (matchedProduct) {
+        // On sélectionne le nom de la catégorie dans la langue actuelle
+        setActiveCategory(matchedProduct.category[l]);
+      } else {
+        setActiveCategory(currentStrings.all);
+      }
+    } else {
+      setActiveCategory(currentStrings.all);
+    }
+  }, [categoryFromUrl, currentStrings.all, l]);
 
   useEffect(() => {
     if (selectedProduct || isOrderModalOpen) {

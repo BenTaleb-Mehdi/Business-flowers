@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
+import Link from "next/link"; // <-- Ajout de l'import Link
 import { useLanguage } from "@/app/components/LanguageProvider";
 import { HAND_TOUCH_PRODUCTS, type MultilingualProductItem } from "@/src/data/prestigeProducts";
 import type { Language } from "@/src/data/translations";
@@ -37,27 +38,31 @@ export default function Collection() {
   const [mounted, setMounted] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  // Localization strings
+  // Localization strings (Ajout de la traduction pour le nouveau bouton)
   const localStrings = {
     fr: {
       viewDetails: "Voir les détails",
       orderModel: "Commander ce modèle",
       featuresLabel: "Caractéristiques",
+      viewAll: "Voir toutes les collections", // <-- Nouveau texte
     },
     en: {
       viewDetails: "View details",
       orderModel: "Order this model",
       featuresLabel: "Features",
+      viewAll: "View all collections", // <-- Nouveau texte
     },
     es: {
       viewDetails: "Ver detalles",
       orderModel: "Pedir este modelo",
       featuresLabel: "Características",
+      viewAll: "Ver todas las colecciones", // <-- Nouveau texte
     },
     ar: {
       viewDetails: "عرض التفاصيل",
       orderModel: "طلب هذا الموديل",
       featuresLabel: "المميزات",
+      viewAll: "عرض جميع المجموعات", // <-- Nouveau texte
     },
   };
 
@@ -206,7 +211,6 @@ export default function Collection() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
         {/* ---------------- SECTION HEADER ---------------- */}
-        {/* CHANGEMENT ICI : items-start sur mobile, md:items-end sur desktop */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-6 md:gap-8">
           <div>
             <h2 className="text-xs font-bold tracking-[0.2em] uppercase text-gray-900 leading-loose">
@@ -230,6 +234,23 @@ export default function Collection() {
               onClick={() => setSelectedProduct(product)}
             />
           ))}
+        </div>
+
+        {/* ---------------- BOUTON "VOIR TOUTES LES COLLECTIONS" ---------------- */}
+        <div className="mt-16 sm:mt-24 flex justify-center">
+          <Link
+            href="/products"
+            className="group relative inline-flex items-center justify-center px-10 py-5 text-[9px] sm:text-[10px] font-bold tracking-[0.25em] uppercase text-gray-900 border border-gray-200 bg-transparent hover:border-gray-900 transition-colors duration-500 overflow-hidden"
+          >
+            {/* Effet de remplissage subtil au survol */}
+            <span className="absolute inset-0 w-full h-full bg-[#F9F7F6] scale-y-0 origin-bottom transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] group-hover:scale-y-100 -z-10" />
+            <span className="relative flex items-center gap-3">
+              {currentStrings.viewAll}
+              <svg className="w-3.5 h-3.5 transition-transform duration-500 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </span>
+          </Link>
         </div>
 
       </div>

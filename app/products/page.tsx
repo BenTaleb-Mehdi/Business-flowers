@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Suspense } from "react"; // <-- 1. Ajouter cet import
 import Products from "@/app/components/Products";
 import { useLanguage } from "@/app/components/LanguageProvider";
 
@@ -25,7 +26,10 @@ export default function ProductsPage() {
         </div>
 
         {/* IMPORTED COMPONENT */}
-        <Products />
+        {/* 2. Entourer avec Suspense */}
+        <Suspense fallback={<div className="text-center text-gray-500 text-sm font-serif italic py-20">Chargement des collections...</div>}>
+          <Products />
+        </Suspense>
       </div>
     </div>
   );
