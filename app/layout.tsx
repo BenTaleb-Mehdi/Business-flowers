@@ -57,7 +57,7 @@ export default function RootLayout({
           </main>
 
           {/* Global Footer */}
-          <Footer />
+        
         </LanguageProvider>
         </SmoothScroll>
             <FloatingContact />
