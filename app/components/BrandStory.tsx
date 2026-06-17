@@ -43,8 +43,8 @@ export default function BrandStory() {
   const c = content[l] || content.fr;
 
   return (
-    <section className="py-20 sm:py-32 bg-white relative z-10 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+<section className="py-20 sm:py-32 bg-transparent relative z-10 overflow-hidden">
+       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           
           {/* IMAGE ASYMÉTRIQUE */}

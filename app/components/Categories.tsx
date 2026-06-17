@@ -53,7 +53,7 @@ export default function Categories() {
   }, []);
 
   return (
-    <section className="py-16 sm:py-24 bg-white relative z-10">
+<section className="py-20 sm:py-32 bg-transparent relative z-10 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-5 lg:px-12">
         
         <div className="flex flex-col items-center text-center mb-12 sm:mb-16">

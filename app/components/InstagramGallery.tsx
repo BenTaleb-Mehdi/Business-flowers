@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { INSTAGRAM_URL } from "@/src/data/content";
 
 export default function InstagramGallery() {
   // Remplacez ces images par vos vraies photos Instagram
@@ -12,14 +13,13 @@ export default function InstagramGallery() {
   ];
 
   return (
-    <section className="bg-white">
-      {/* Header Instagram */}
+<section className="py-20 sm:py-32 bg-transparent relative z-10 overflow-hidden">      {/* Header Instagram */}
       <div className="py-16 sm:py-20 text-center">
         <span className="text-[9px] font-bold tracking-[0.25em] uppercase text-gray-400 mb-4 block">
           Rejoignez l'univers
         </span>
         <a 
-          href="https://instagram.com/handtouch" // Remplacez par votre lien
+          href={INSTAGRAM_URL}// Remplacez par votre lien
           target="_blank" 
           rel="noopener noreferrer"
           className="font-serif text-2xl sm:text-3xl text-gray-900 hover:text-[#6A4C4C] transition-colors duration-300"
@@ -33,7 +33,7 @@ export default function InstagramGallery() {
         {instaPosts.map((post, idx) => (
           <a 
             key={idx} 
-            href="https://instagram.com/handtouch" 
+          href={INSTAGRAM_URL}
             target="_blank" 
             rel="noopener noreferrer"
             className="relative w-full aspect-square group overflow-hidden bg-[#F9F7F6]"
