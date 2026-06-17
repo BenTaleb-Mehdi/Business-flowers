@@ -7,6 +7,9 @@ import HowItWorks from "@/app/components/HowItWorks";
 import { Analytics } from '@vercel/analytics/next';
 import FloatingContact from "@/app/components/FloatingContact";
 import Categories from "@/app/components/Categories";
+import Testimonials from "@/app/components/Testimonials";
+import InstagramGallery from "@/app/components/InstagramGallery";
+import BrandStory from "@/app/components/BrandStory";
 
 export const metadata: Metadata = {
   title: SEO_METADATA.title,
@@ -34,9 +37,12 @@ export default function Home() {
       {/* Content layout */}
       <div className="flex-grow z-10 relative">
         <Hero />
+        <BrandStory />
         <Categories />
         <Collection />
         <HowItWorks />
+        <Testimonials /> 
+      <InstagramGallery />
         <Analytics />
       </div>
 
