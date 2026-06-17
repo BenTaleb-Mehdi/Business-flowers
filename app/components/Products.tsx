@@ -288,8 +288,9 @@ export default function Products() {
 
       <div className="flex flex-col lg:flex-row gap-12 xl:gap-24 relative items-start">
         {/* S-Sidebar dyal l-mobile & Desktop */}
+       {/* S-Sidebar dyal l-mobile & Desktop */}
         <aside
-          className={`fixed inset-y-0 left-0 z-[99999] lg:z-0 w-[280px] bg-[#F9F7F6] p-8 lg:p-0 transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] lg:sticky lg:top-32 lg:translate-x-0 lg:w-48 lg:bg-transparent lg:flex-shrink-0 h-screen lg:h-fit overflow-y-auto pb-32 lg:pb-0 ${
+          className={`fixed inset-y-0 left-0 z-[99999] lg:z-0 w-[280px] bg-[#F9F7F6] p-8 transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] lg:sticky lg:top-32 lg:translate-x-0 lg:w-64 lg:bg-white/50 lg:backdrop-blur-md lg:border lg:border-white/60 lg:shadow-[0_4px_20px_rgb(0,0,0,0.03)] lg:rounded-2xl lg:flex-shrink-0 h-screen lg:h-fit overflow-y-auto pb-32 lg:pb-8 lg:-ml-6 ${
             isMobileFilterOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full lg:shadow-none"
           }`}
         >
@@ -319,7 +320,7 @@ export default function Products() {
                       className={`text-xs tracking-wider transition-all duration-300 ${
                         activeCategory === category
                           ? "text-[#6A4C4C] font-bold translate-x-2"
-                          : "text-gray-500 hover:text-gray-900 hover:translate-x-1"
+                          : "text-gray-600 hover:text-gray-900 hover:translate-x-1" /* <-- Ktaba rje3naha mghem9a chwia (text-gray-600) */
                       }`}
                     >
                       {category}
@@ -328,20 +329,20 @@ export default function Products() {
                 ))}
               </ul>
             </div>
-            <div className="w-8 h-[1px] bg-gray-200 hidden lg:block" />
+            <div className="w-8 h-[1px] bg-gray-300 hidden lg:block" />
             <div>
               <h3 className="text-[10px] font-bold tracking-[0.25em] uppercase text-gray-900 mb-6">
                 {currentStrings.sortBy}
               </h3>
               <ul className="space-y-4">
                 <li>
-                  <button className="text-xs tracking-wider text-gray-500 hover:text-gray-900 transition-colors">{currentStrings.sortNew}</button>
+                  <button className="text-xs tracking-wider text-gray-600 hover:text-gray-900 transition-colors">{currentStrings.sortNew}</button>
                 </li>
                 <li>
-                  <button className="text-xs tracking-wider text-gray-500 hover:text-gray-900 transition-colors">{currentStrings.sortAsc}</button>
+                  <button className="text-xs tracking-wider text-gray-600 hover:text-gray-900 transition-colors">{currentStrings.sortAsc}</button>
                 </li>
                 <li>
-                  <button className="text-xs tracking-wider text-gray-500 hover:text-gray-900 transition-colors">{currentStrings.sortDesc}</button>
+                  <button className="text-xs tracking-wider text-gray-600 hover:text-gray-900 transition-colors">{currentStrings.sortDesc}</button>
                 </li>
               </ul>
             </div>
